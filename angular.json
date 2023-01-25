@@ -3,5 +3,55 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "alvys-ui-components": {
+      "projectType": "library",
+      "root": "projects/alvys-ui-components",
+      "sourceRoot": "projects/alvys-ui-components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/alvys-ui-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/alvys-ui-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/alvys-ui-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/alvys-ui-components/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "storybook": {
+      "projectType": "application",
+      "root": "stories",
+      "sourceRoot": "stories",
+      "architect": {
+        "build": {
+          "options": {
+            "tsConfig": "tsconfig.json",
+            "styles": ["projects/alvys-ui-components/styles/global.scss"],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "9d9d5afb-659c-4cfc-93ed-24939d696987"
   }
 }

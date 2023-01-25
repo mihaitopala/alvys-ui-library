@@ -1,0 +1,177 @@
+@use '@angular/material' as mat;
+@import "@angular/material/theming";
+
+$blue-primary-palette: (
+  50: #e3f3ff,
+  100: #bcdfff,
+  200: #8fccff,
+  300: #5fb8ff,
+  400: #39a8ff,
+  500: #1198ff,
+  600: #1c8aff,
+  700: #2077eb,
+  800: #2265d8,
+  900: #2245b9,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: #616161,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$orange-complementary-palette: (
+  50: #fff3e0,
+  100: #ffdfb1,
+  200: #ffcb7f,
+  300: #ffb54c,
+  400: #ffa524,
+  500: #ff9500,
+  600: #ff8900,
+  700: #fa7900,
+  800: #f46801,
+  900: #eb4c02,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$mat-light-theme-foreground: (
+  base: black,
+  divider: $dark-dividers,
+  dividers: $dark-dividers,
+  disabled: $dark-disabled-text,
+  disabled-button: rgba(black, 0.26),
+  disabled-text: $dark-disabled-text,
+  elevation: black,
+  hint-text: $dark-disabled-text,
+  secondary-text: map-get($blue-primary-palette, contrast, 700),
+  icon: rgba(black, 0.54),
+  icons: rgba(black, 0.54),
+  text: rgba(black, 0.87),
+  slider-min: rgba(black, 0.87),
+  slider-off: rgba(black, 0.26),
+  slider-off-active: rgba(black, 0.38),
+);
+
+$mat-light-theme-background: (
+  status-bar: map-get($mat-grey, 300),
+  app-bar: map-get($mat-grey, 100),
+  background: map-get($mat-grey, 100),
+  hover: rgba(black, 0.04),
+  card: white,
+  dialog: white,
+  disabled-button: rgba(black, 0.12),
+  raised-button: white,
+  focused-button: $dark-focused,
+  selected-button: map-get($mat-grey, 300),
+  selected-disabled-button: map-get($mat-grey, 400),
+  disabled-button-toggle: map-get($mat-grey, 200),
+  unselected-chip: map-get($mat-grey, 300),
+  disabled-list-option: map-get($mat-grey, 200),
+  tooltip: map-get($mat-grey, 700),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$alvys-ui-primary: mat.define-palette($blue-primary-palette, 900, 600, 900);
+$alvys-ui-accent: mat.define-palette($orange-complementary-palette, 700);
+
+// The warn palette is optional (defaults to red).
+$alvys-ui-warn: mat.define-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$alvys-ui-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $alvys-ui-primary,
+      accent: $alvys-ui-accent,
+      warn: $alvys-ui-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($alvys-ui-theme);
+
+.mdc-button,
+.mdc-raised-button,
+.mdc-stroked-button,
+.mdc-flat-button {
+  border-radius: 0 !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  &.small {
+    height: 25px;
+  }
+
+  .mdc-button__label {
+    font-weight: 500;
+  }
+}
+
+.mdc-button {
+  color: map-get($mat-grey, 500);
+
+  &:hover {
+    background-color: map-get($blue-primary-palette, 50);
+  }
+
+  &:disabled {
+    color: map-get($mat-grey, 500);
+    background-color: inherit;
+  }
+}
+
+.mdc-stroked-button {
+  color: map-get($blue-primary-palette, 900);
+  border-color: map-get($mat-grey, 500);
+
+  &:hover {
+    background-color: map-get($blue-primary-palette, 50);
+  }
+
+  &:disabled {
+    color: map-get($mat-grey, 500);
+    background-color: inherit;
+  }
+}
+
+.mdc-flat-button {
+  &:hover {
+    background-color: map-get($blue-primary-palette, 500);
+  }
+
+  &:disabled {
+    color: map-get($mat-grey, 500);
+    background-color: map-get($mat-grey, 200);
+  }
+}

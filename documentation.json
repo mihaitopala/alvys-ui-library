@@ -1,0 +1,856 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "ButtonFilledComponent",
+            "id": "component-ButtonFilledComponent-cc2de14ad2a9c5d98851d651fcca456ac4f606d1b5d97c795e62eef5681846594e682ceb5762dc97291ab25509bf4bb5b2d1750acd07c2d987ba376b0526ebfe",
+            "file": "projects/alvys-ui-components/src/lib/components/button-filled/button-filled.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button-filled",
+            "styleUrls": [
+                "./button-filled.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button-filled.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'large'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "\"small\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button-filled',\r\n  templateUrl: './button-filled.component.html',\r\n  styleUrls: ['./button-filled.component.scss'],\r\n})\r\nexport class ButtonFilledComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: 'small' | 'large' = 'large';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === 'small' ? 'small' : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./button-filled.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 20
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 18
+                    }
+                }
+            },
+            "templateData": "<button\r\n  mat-flat-button\r\n  [disabled]=\"disabled\"\r\n  [ngClass]=\"classes\"\r\n  color=\"primary\"\r\n>\r\n  <ng-content></ng-content>\r\n</button>\r\n"
+        },
+        {
+            "name": "ButtonOutlinedComponent",
+            "id": "component-ButtonOutlinedComponent-b6cd11804edaee3de504fb5127dfb92a540ab13c98414d4f87412ad4cac23b27b2a87abea3a03d7daac642f18e57c183dd14ceff8fed3592bf0a75a4ff5faf1a",
+            "file": "projects/alvys-ui-components/src/lib/components/button-outlined/button-outlined.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button-outlined",
+            "styleUrls": [
+                "./button-outlined.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button-outlined.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'large'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "\"small\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button-outlined',\r\n  templateUrl: './button-outlined.component.html',\r\n  styleUrls: ['./button-outlined.component.scss'],\r\n})\r\nexport class ButtonOutlinedComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: 'small' | 'large' = 'large';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === 'small' ? 'small' : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./button-outlined.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 20
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 18
+                    }
+                }
+            },
+            "templateData": "<button mat-stroked-button [disabled]=\"disabled\" [ngClass]=\"classes\">\r\n    <ng-content></ng-content>\r\n</button>\r\n"
+        },
+        {
+            "name": "ButtonTextComponent",
+            "id": "component-ButtonTextComponent-542277ea382005dcca39f1ab402e4d74fbe469eae85851424cc11c44ee6e145e4ccf5cfc4570194dccfec723d4f90683dda7765ba8d6d5511e3f27d436feaf46",
+            "file": "projects/alvys-ui-components/src/lib/components/button-text/button-text.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button-text",
+            "styleUrls": [
+                "./button-text.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button-text.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'large'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "\"small\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button-text',\r\n  templateUrl: './button-text.component.html',\r\n  styleUrls: ['./button-text.component.scss'],\r\n})\r\nexport class ButtonTextComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: 'small' | 'large' = 'large';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === 'small' ? 'small' : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./button-text.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 20
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 18
+                    }
+                }
+            },
+            "templateData": "<button mat-button [disabled]=\"disabled\" [ngClass]=\"classes\">\r\n  <ng-content></ng-content>\r\n</button>\r\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AlvysUiComponentsModule",
+            "id": "module-AlvysUiComponentsModule-093c996f90e6e12743e05a924995b8dfd54c89c2435355e8e4dd468dc008a6b26d300c47b541c00aa00efe63576d619d8f0993365f1bf4c47ec8001fa9128d84",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/alvys-ui-components/src/lib/alvys-ui.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { AngularMaterialModule } from './angular-material.module';\r\nimport {\r\n  ButtonOutlinedComponent,\r\n  ButtonFilledComponent,\r\n  ButtonTextComponent,\r\n} from './components';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ButtonOutlinedComponent,\r\n    ButtonFilledComponent,\r\n    ButtonTextComponent,\r\n  ],\r\n  imports: [BrowserModule, BrowserAnimationsModule, AngularMaterialModule],\r\n  exports: [\r\n    ButtonOutlinedComponent,\r\n    ButtonFilledComponent,\r\n    ButtonTextComponent,\r\n  ],\r\n})\r\nexport class AlvysUiComponentsModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ButtonFilledComponent"
+                        },
+                        {
+                            "name": "ButtonOutlinedComponent"
+                        },
+                        {
+                            "name": "ButtonTextComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AngularMaterialModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ButtonFilledComponent"
+                        },
+                        {
+                            "name": "ButtonOutlinedComponent"
+                        },
+                        {
+                            "name": "ButtonTextComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AngularMaterialModule",
+            "id": "module-AngularMaterialModule-ef394b3288a46f178cdc68989e31388e168bedf3215c97c1b35ed87a273e6df25badb835a932620beec5dcdd03dbd674562f96fdf76ff013d576d4645d02497a",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/alvys-ui-components/src/lib/angular-material.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatIconModule } from '@angular/material/icon';\r\n\r\nconst materialModules = [MatButtonModule, MatIconModule];\r\n\r\n@NgModule({\r\n  imports: [CommonModule, ...materialModules],\r\n  exports: [...materialModules],\r\n})\r\nexport class AngularMaterialModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-filled.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-outlined.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-filled.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-outlined.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "materialModules",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/alvys-ui-components/src/lib/angular-material.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[MatButtonModule, MatIconModule]"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-filled.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-outlined.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-filled.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonFilledComponent>",
+                "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-filled>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonTextComponent>",
+                "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-outlined.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonOutlinedComponent>",
+                "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "stories/button-filled.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-filled.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-filled.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-filled.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-filled.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonFilledComponent>",
+                    "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-filled>\r\n  `,\r\n})"
+                }
+            ],
+            "stories/button-text.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonTextComponent>",
+                    "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
+                }
+            ],
+            "stories/button-outlined.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-outlined.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-outlined.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-outlined.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-outlined.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonOutlinedComponent>",
+                    "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
+                }
+            ],
+            "projects/alvys-ui-components/src/lib/angular-material.module.ts": [
+                {
+                    "name": "materialModules",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/alvys-ui-components/src/lib/angular-material.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[MatButtonModule, MatIconModule]"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/alvys-ui-components/src/lib/angular-material.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "materialModules",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/alvys-ui-components/src/lib/components/button-filled/button-filled.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonFilledComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/alvys-ui-components/src/lib/components/button-outlined/button-outlined.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonOutlinedComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/alvys-ui-components/src/lib/components/button-text/button-text.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonTextComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button-filled.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button-filled.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button-filled.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button-filled.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button-outlined.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button-outlined.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button-outlined.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button-outlined.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button-text.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button-text.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button-text.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button-text.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
