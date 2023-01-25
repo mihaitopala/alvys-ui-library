@@ -44,7 +44,9 @@
         "build": {
           "options": {
             "tsConfig": "tsconfig.json",
-            "styles": ["projects/alvys-ui-components/styles/global.scss"],
+            "styles": [
+              "projects/alvys-ui-components/styles/global.scss"
+            ],
             "scripts": []
           }
         }

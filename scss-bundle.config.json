@@ -1,0 +1,8 @@
+{
+    "bundlerOptions": {
+        "entryFile": "projects/alvys-ui-components/styles/global.scss",
+        "outFile": "dist/alvys-ui-components/alvys-ui-theme.styles.scss",
+        "rootDir": "../../",
+        "verbosity": "error"
+    }
+}

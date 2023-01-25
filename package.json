@@ -11,7 +11,8 @@
     "storybook": "yarn docs:json && start-storybook -p 6006",
     "build-storybook": "yarn docs:json && build-storybook",
     "build-library": "ng build alvys-ui-components",
-    "pack-lib": "cd dist/alvys-ui-components && npm pack"
+    "pack-lib": "cd dist/alvys-ui-components && npm pack",
+    "build:scss": "scss-bundle -p scss-bundle.config.json"
   },
   "private": true,
   "dependencies": {

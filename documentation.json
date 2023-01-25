@@ -425,7 +425,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-text.stories.ts",
+                "file": "stories/button-outlined.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -435,7 +435,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-outlined.stories.ts",
+                "file": "stories/button-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -455,7 +455,7 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-text.stories.ts",
+                "file": "stories/button-outlined.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -465,7 +465,7 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-outlined.stories.ts",
+                "file": "stories/button-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -495,7 +495,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-text.stories.ts",
+                "file": "stories/button-outlined.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -505,7 +505,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-outlined.stories.ts",
+                "file": "stories/button-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -525,21 +525,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonTextComponent>",
-                "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/button-outlined.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonOutlinedComponent>",
                 "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonTextComponent>",
+                "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
             }
         ],
         "functions": [],
@@ -588,48 +588,6 @@
                     "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-filled>\r\n  `,\r\n})"
                 }
             ],
-            "stories/button-text.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/button-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Disabled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/button-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/button-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/button-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonTextComponent>",
-                    "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
-                }
-            ],
             "stories/button-outlined.stories.ts": [
                 {
                     "name": "Default",
@@ -670,6 +628,48 @@
                     "deprecationMessage": "",
                     "type": "Story<ButtonOutlinedComponent>",
                     "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
+                }
+            ],
+            "stories/button-text.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonTextComponent>",
+                    "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
                 }
             ],
             "projects/alvys-ui-components/src/lib/angular-material.module.ts": [
