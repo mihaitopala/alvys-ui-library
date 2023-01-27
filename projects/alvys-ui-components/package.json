@@ -1,8 +1,9 @@
 {
   "name": "alvys-ui-components",
-  "version": "1.0.4",
+  "version": "1.0.7",
+  "keywords": ["alvys", "components"],
   "exports": {
-    ".": {
+    "./styles/index.scss": {
       "sass": "./styles/global.scss"
     }
   },

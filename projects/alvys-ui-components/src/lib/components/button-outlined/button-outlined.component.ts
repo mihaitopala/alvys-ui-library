@@ -3,7 +3,7 @@ import { ThemePalette } from '@angular/material/core';
 import { ButtonSize } from '../../enums/button-size.enum';
 
 @Component({
-  selector: 'app-button-outlined',
+  selector: 'alvys-button-outlined',
   templateUrl: './button-outlined.component.html',
   styleUrls: ['./button-outlined.component.scss'],
 })

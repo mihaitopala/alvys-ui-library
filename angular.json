@@ -5,6 +5,11 @@
   "projects": {
     "alvys-ui-components": {
       "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "projects/alvys-ui-components",
       "sourceRoot": "projects/alvys-ui-components/src",
       "prefix": "alvys",

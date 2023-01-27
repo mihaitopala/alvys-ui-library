@@ -20,9 +20,9 @@ const Template: Story<ButtonOutlinedComponent> = (
 ) => ({
   props: args,
   template: `
-  <app-button-outlined [disabled]="disabled" [size]="size" [color]="color" (onClick)="onClick($event)">
+  <alvys-button-outlined [disabled]="disabled" [size]="size" [color]="color" (onClick)="onClick($event)">
     Button
-  </app-button-outlined>
+  </alvys-button-outlined>
   `,
 });
 

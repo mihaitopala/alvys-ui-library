@@ -23,10 +23,10 @@ const Template: Story<ButtonFilledComponent> = (
 ) => ({
   props: args,
   template: `
-  <app-button-filled [disabled]="disabled" [size]="size" (onClick)="onClick($event)" >
+  <alvys-button-filled [disabled]="disabled" [size]="size" (onClick)="onClick($event)" >
     Button
     <mat-icon>keyboard_arrow_down</mat-icon>
-  </app-button-filled>
+  </alvys-button-filled>
   `,
 });
 

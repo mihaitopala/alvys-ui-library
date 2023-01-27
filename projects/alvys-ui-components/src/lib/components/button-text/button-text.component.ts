@@ -3,7 +3,7 @@ import { ThemePalette } from '@angular/material/core';
 import { ButtonSize } from '../../enums/button-size.enum';
 
 @Component({
-  selector: 'app-button-text',
+  selector: 'alvys-button-text',
   templateUrl: './button-text.component.html',
   styleUrls: ['./button-text.component.scss'],
 })

@@ -4,3 +4,4 @@
 
 export * from './lib/alvys-ui.module';
 export * from './lib/components';
+export * from './lib/enums';

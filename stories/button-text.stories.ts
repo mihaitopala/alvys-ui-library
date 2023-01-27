@@ -18,9 +18,9 @@ export default {
 const Template: Story<ButtonTextComponent> = (args: ButtonTextComponent) => ({
   props: args,
   template: `
-  <app-button-text [disabled]="disabled" [size]="size" (onClick)="onClick($event)">
+  <alvys-button-text [disabled]="disabled" [size]="size" (onClick)="onClick($event)">
     Button
-  </app-button-text>
+  </alvys-button-text>
   `,
 });
 
