@@ -115,7 +115,7 @@
                     }
                 }
             },
-            "templateData": "<button\r\n  mat-flat-button\r\n  [disabled]=\"disabled\"\r\n  [ngClass]=\"classes\"\r\n  [color]=\"color\"\r\n  (click)=\"onClick.emit($event)\"\r\n>\r\n{{color}}\r\n  <ng-content></ng-content>\r\n</button>\r\n"
+            "templateData": "<button\r\n  mat-flat-button\r\n  [disabled]=\"disabled\"\r\n  [ngClass]=\"classes\"\r\n  [color]=\"color\"\r\n  (click)=\"onClick.emit($event)\"\r\n>\r\n  <ng-content></ng-content>\r\n</button>\r\n"
         },
         {
             "name": "ButtonOutlinedComponent",
@@ -442,7 +442,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-filled.stories.ts",
+                "file": "stories/button-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -462,7 +462,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-text.stories.ts",
+                "file": "stories/button-filled.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -472,7 +472,7 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-filled.stories.ts",
+                "file": "stories/button-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -492,7 +492,7 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-text.stories.ts",
+                "file": "stories/button-filled.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -512,7 +512,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-filled.stories.ts",
+                "file": "stories/button-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -532,7 +532,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-text.stories.ts",
+                "file": "stories/button-filled.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -542,11 +542,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-filled.stories.ts",
+                "file": "stories/button-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonFilledComponent>",
-                "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </app-button-filled>\r\n  `,\r\n})"
+                "type": "Story<ButtonTextComponent>",
+                "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -562,11 +562,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-text.stories.ts",
+                "file": "stories/button-filled.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonTextComponent>",
-                "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
+                "type": "Story<ButtonFilledComponent>",
+                "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </app-button-filled>\r\n  `,\r\n})"
             }
         ],
         "functions": [],
@@ -597,12 +597,12 @@
             }
         ],
         "groupedVariables": {
-            "stories/button-filled.stories.ts": [
+            "stories/button-text.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-filled.stories.ts",
+                    "file": "stories/button-text.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -612,7 +612,7 @@
                     "name": "Disabled",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-filled.stories.ts",
+                    "file": "stories/button-text.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -622,7 +622,7 @@
                     "name": "Small",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-filled.stories.ts",
+                    "file": "stories/button-text.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -632,11 +632,11 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-filled.stories.ts",
+                    "file": "stories/button-text.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<ButtonFilledComponent>",
-                    "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </app-button-filled>\r\n  `,\r\n})"
+                    "type": "Story<ButtonTextComponent>",
+                    "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
                 }
             ],
             "stories/button-outlined.stories.ts": [
@@ -681,12 +681,12 @@
                     "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\" [color]=\"color\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
                 }
             ],
-            "stories/button-text.stories.ts": [
+            "stories/button-filled.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-text.stories.ts",
+                    "file": "stories/button-filled.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -696,7 +696,7 @@
                     "name": "Disabled",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-text.stories.ts",
+                    "file": "stories/button-filled.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -706,7 +706,7 @@
                     "name": "Small",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-text.stories.ts",
+                    "file": "stories/button-filled.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -716,11 +716,11 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-text.stories.ts",
+                    "file": "stories/button-filled.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<ButtonTextComponent>",
-                    "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
+                    "type": "Story<ButtonFilledComponent>",
+                    "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </app-button-filled>\r\n  `,\r\n})"
                 }
             ],
             "projects/alvys-ui-components/src/lib/angular-material.module.ts": [

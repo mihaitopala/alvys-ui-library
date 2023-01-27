@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/alvys-ui-components",
       "sourceRoot": "projects/alvys-ui-components/src",
-      "prefix": "lib",
+      "prefix": "alvys",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
