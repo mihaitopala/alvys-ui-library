@@ -106,11 +106,11 @@
                     }
                 }
             },
-            "templateData": "<button\r\n  mat-flat-button\r\n  [disabled]=\"disabled\"\r\n  [ngClass]=\"classes\"\r\n  color=\"primary\"\r\n>\r\n  <ng-content></ng-content>\r\n</button>\r\n"
+            "templateData": "<button\r\n  mat-flat-button\r\n  [disabled]=\"disabled\"\r\n  [ngClass]=\"classes\"\r\n  color=\"primary\"\r\n  (click)=\"onClick.emit($event)\"\r\n>\r\n  <ng-content></ng-content>\r\n</button>\r\n"
         },
         {
             "name": "ButtonOutlinedComponent",
-            "id": "component-ButtonOutlinedComponent-b6cd11804edaee3de504fb5127dfb92a540ab13c98414d4f87412ad4cac23b27b2a87abea3a03d7daac642f18e57c183dd14ceff8fed3592bf0a75a4ff5faf1a",
+            "id": "component-ButtonOutlinedComponent-6cda6820367ef88f5327056fba9ecebbdea629ff6532f1ba6e88b2ed1672188ecdd2dd5c878f31953b1f2935e70f4cdf19316fca017f8a4ab4eabc5350fb5f7c",
             "file": "projects/alvys-ui-components/src/lib/components/button-outlined/button-outlined.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -176,7 +176,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button-outlined',\r\n  templateUrl: './button-outlined.component.html',\r\n  styleUrls: ['./button-outlined.component.scss'],\r\n})\r\nexport class ButtonOutlinedComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: 'small' | 'large' = 'large';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === 'small' ? 'small' : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button-outlined',\r\n  templateUrl: './button-outlined.component.html',\r\n  styleUrls: ['./button-outlined.component.scss'],\r\n})\r\nexport class ButtonOutlinedComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: 'small' | 'large' = 'large';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n  \r\n  get classes(): string[] {\r\n    return [this.size === 'small' ? 'small' : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -207,7 +207,7 @@
                     }
                 }
             },
-            "templateData": "<button mat-stroked-button [disabled]=\"disabled\" [ngClass]=\"classes\">\r\n    <ng-content></ng-content>\r\n</button>\r\n"
+            "templateData": "<button\r\n  mat-stroked-button\r\n  [disabled]=\"disabled\"\r\n  (click)=\"onClick.emit($event)\"\r\n  [ngClass]=\"classes\"\r\n>\r\n  <ng-content></ng-content>\r\n</button>\r\n"
         },
         {
             "name": "ButtonTextComponent",
@@ -308,7 +308,7 @@
                     }
                 }
             },
-            "templateData": "<button mat-button [disabled]=\"disabled\" [ngClass]=\"classes\">\r\n  <ng-content></ng-content>\r\n</button>\r\n"
+            "templateData": "<button\r\n  mat-button\r\n  [disabled]=\"disabled\"\r\n  (click)=\"onClick.emit($event)\"\r\n  [ngClass]=\"classes\"\r\n>\r\n  <ng-content></ng-content>\r\n</button>\r\n"
         }
     ],
     "modules": [
@@ -519,7 +519,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonFilledComponent>",
-                "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-filled>\r\n  `,\r\n})"
+                "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n  </app-button-filled>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -529,7 +529,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonOutlinedComponent>",
-                "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
+                "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -539,7 +539,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonTextComponent>",
-                "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
+                "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
             }
         ],
         "functions": [],
@@ -585,7 +585,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ButtonFilledComponent>",
-                    "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-filled>\r\n  `,\r\n})"
+                    "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n  </app-button-filled>\r\n  `,\r\n})"
                 }
             ],
             "stories/button-outlined.stories.ts": [
@@ -627,7 +627,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ButtonOutlinedComponent>",
-                    "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
+                    "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
                 }
             ],
             "stories/button-text.stories.ts": [
@@ -669,7 +669,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ButtonTextComponent>",
-                    "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
+                    "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
                 }
             ],
             "projects/alvys-ui-components/src/lib/angular-material.module.ts": [

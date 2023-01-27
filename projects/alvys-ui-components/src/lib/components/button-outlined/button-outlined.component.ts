@@ -14,7 +14,7 @@ export class ButtonOutlinedComponent implements OnInit {
 
   @Output()
   onClick = new EventEmitter<Event>();
-
+  
   get classes(): string[] {
     return [this.size === 'small' ? 'small' : ''];
   }

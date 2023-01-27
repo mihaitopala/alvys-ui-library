@@ -3,6 +3,7 @@
   [disabled]="disabled"
   [ngClass]="classes"
   color="primary"
+  (click)="onClick.emit($event)"
 >
   <ng-content></ng-content>
 </button>

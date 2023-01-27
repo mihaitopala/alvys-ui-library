@@ -1,5 +1,7 @@
 import { MatButtonModule } from '@angular/material/button';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 import { ButtonTextComponent } from 'alvys-ui-components';
 
 export default {
@@ -16,7 +18,7 @@ export default {
 const Template: Story<ButtonTextComponent> = (args: ButtonTextComponent) => ({
   props: args,
   template: `
-  <app-button-text [disabled]="disabled" [size]="size">
+  <app-button-text [disabled]="disabled" [size]="size" (onClick)="onClick($event)">
     Button
   </app-button-text>
   `,
@@ -34,3 +36,11 @@ export const Small = Template.bind({});
 Small.args = {
   size: 'small',
 } as Partial<ButtonTextComponent>;
+
+Default.play = async ({ args, canvasElement }) => {
+  const canvas = within(canvasElement);
+
+  await userEvent.click(canvas.getByRole('button'));
+
+  await waitFor(() => expect(args.onClick).toHaveBeenCalled());
+};

@@ -1,0 +1,66 @@
+.mdc-button,
+.mdc-raised-button,
+.mdc-stroked-button,
+.mdc-flat-button {
+    border-radius: 0 !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &.small {
+        height: 25px;
+        font-size: 10px;
+        .mdc-button__label {
+            .mat-icon {
+                font-size: 15px;
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+
+    .mdc-button__label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+        font-weight: 500;
+    }
+}
+
+.mdc-button {
+    color: map-get($mat-grey, 500);
+
+    &:hover {
+        background-color: map-get($blue-primary-palette, 50);
+    }
+
+    &:disabled {
+        color: map-get($mat-grey, 500);
+        background-color: inherit;
+    }
+}
+
+.mdc-stroked-button {
+    color: map-get($blue-primary-palette, 900);
+    border-color: map-get($mat-grey, 500);
+
+    &:hover {
+        background-color: map-get($blue-primary-palette, 50);
+    }
+
+    &:disabled {
+        color: map-get($mat-grey, 500);
+        background-color: inherit;
+    }
+}
+
+.mdc-flat-button {
+    &:hover {
+        background-color: map-get($blue-primary-palette, 500);
+    }
+
+    &:disabled {
+        color: map-get($mat-grey, 500);
+        background-color: map-get($mat-grey, 200);
+    }
+}

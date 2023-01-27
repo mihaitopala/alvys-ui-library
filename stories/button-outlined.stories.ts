@@ -1,5 +1,7 @@
 import { MatButtonModule } from '@angular/material/button';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 import { ButtonOutlinedComponent } from 'alvys-ui-components';
 
 export default {
@@ -18,7 +20,7 @@ const Template: Story<ButtonOutlinedComponent> = (
 ) => ({
   props: args,
   template: `
-  <app-button-outlined [disabled]="disabled" [size]="size">
+  <app-button-outlined [disabled]="disabled" [size]="size" (onClick)="onClick($event)">
     Button
   </app-button-outlined>
   `,
@@ -36,3 +38,11 @@ export const Small = Template.bind({});
 Small.args = {
   size: 'small',
 } as Partial<ButtonOutlinedComponent>;
+
+Default.play = async ({ args, canvasElement }) => {
+  const canvas = within(canvasElement);
+
+  await userEvent.click(canvas.getByRole('button'));
+
+  await waitFor(() => expect(args.onClick).toHaveBeenCalled());
+};
