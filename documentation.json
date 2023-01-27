@@ -9,14 +9,14 @@
     "components": [
         {
             "name": "ButtonFilledComponent",
-            "id": "component-ButtonFilledComponent-9591636365b24ad0e3794e3bb547588423a8c2df76e9d51ceb6bc6197b00571cc6f9807c610ae515f9f0b662bc058fcae843527ccbd15bf1b90b51d6075fe08c",
+            "id": "component-ButtonFilledComponent-3e69c21f7a325963e1470ab98f6c4dc29fada5acc3bb165d438fb8e40be90d43ae0d65cb23c78ccdb2133fb5305cd9ba18bf91ff2e0e476feea77f8fb20c32ed",
             "file": "projects/alvys-ui-components/src/lib/components/button-filled/button-filled.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-button-filled",
+            "selector": "alvys-button-filled",
             "styleUrls": [
                 "./button-filled.component.scss"
             ],
@@ -31,7 +31,7 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 17,
                     "type": "ThemePalette",
                     "decorators": []
                 },
@@ -40,16 +40,16 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 11,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "size",
-                    "defaultValue": "ButtonSize.Large",
+                    "defaultValue": "'large'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 14,
                     "type": "ButtonSize",
                     "decorators": []
                 }
@@ -60,7 +60,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 20,
                     "type": "EventEmitter"
                 }
             ],
@@ -72,7 +72,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 28,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -84,7 +84,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\nimport { ThemePalette } from '@angular/material/core';\r\nimport { ButtonSize } from '../../enums/button-size.enum';\r\n\r\n@Component({\r\n  selector: 'app-button-filled',\r\n  templateUrl: './button-filled.component.html',\r\n  styleUrls: ['./button-filled.component.scss'],\r\n})\r\nexport class ButtonFilledComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: ButtonSize = ButtonSize.Large;\r\n\r\n  @Input()\r\n  color?: ThemePalette = 'primary';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === ButtonSize.Small ? ButtonSize.Small : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\nimport { ButtonSize, ThemePalette } from '../../types';\r\n\r\n@Component({\r\n  selector: 'alvys-button-filled',\r\n  templateUrl: './button-filled.component.html',\r\n  styleUrls: ['./button-filled.component.scss'],\r\n})\r\nexport class ButtonFilledComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: ButtonSize = 'large';\r\n\r\n  @Input()\r\n  color?: ThemePalette = 'primary';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === 'small' ? 'small' : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -99,7 +99,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 25
+                "line": 24
             },
             "implements": [
                 "OnInit"
@@ -111,7 +111,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 23
+                        "line": 22
                     }
                 }
             },
@@ -119,14 +119,14 @@
         },
         {
             "name": "ButtonOutlinedComponent",
-            "id": "component-ButtonOutlinedComponent-4d2bc2c8423448886301fb4a21b25aca647c708443795fb932b5438f7384d9d06d4934108ebde8547048134bed41aecf6b2b16f99daa03ca98093ef70ce7bd67",
+            "id": "component-ButtonOutlinedComponent-0be83d82096e64f164cb894789adc8952a80094c736c872c28d24ef9ab63c7a87c1c08661984768d23b35eee1bab4863841feec636ed879e362ea74672d23a55",
             "file": "projects/alvys-ui-components/src/lib/components/button-outlined/button-outlined.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-button-outlined",
+            "selector": "alvys-button-outlined",
             "styleUrls": [
                 "./button-outlined.component.scss"
             ],
@@ -141,7 +141,7 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 17,
                     "type": "ThemePalette",
                     "decorators": []
                 },
@@ -150,16 +150,16 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 11,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "size",
-                    "defaultValue": "ButtonSize.Large",
+                    "defaultValue": "'large'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 14,
                     "type": "ButtonSize",
                     "decorators": []
                 }
@@ -170,7 +170,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 20,
                     "type": "EventEmitter"
                 }
             ],
@@ -182,7 +182,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 28,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -194,7 +194,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\nimport { ThemePalette } from '@angular/material/core';\r\nimport { ButtonSize } from '../../enums/button-size.enum';\r\n\r\n@Component({\r\n  selector: 'app-button-outlined',\r\n  templateUrl: './button-outlined.component.html',\r\n  styleUrls: ['./button-outlined.component.scss'],\r\n})\r\nexport class ButtonOutlinedComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: ButtonSize = ButtonSize.Large;\r\n\r\n  @Input()\r\n  color?: ThemePalette = 'primary';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === ButtonSize.Small ? ButtonSize.Small : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\nimport { ButtonSize, ThemePalette } from '../../types';\r\n\r\n@Component({\r\n  selector: 'alvys-button-outlined',\r\n  templateUrl: './button-outlined.component.html',\r\n  styleUrls: ['./button-outlined.component.scss'],\r\n})\r\nexport class ButtonOutlinedComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: ButtonSize = 'large';\r\n\r\n  @Input()\r\n  color?: ThemePalette = 'primary';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === 'small' ? 'small' : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -209,7 +209,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 25
+                "line": 24
             },
             "implements": [
                 "OnInit"
@@ -221,7 +221,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 23
+                        "line": 22
                     }
                 }
             },
@@ -229,14 +229,14 @@
         },
         {
             "name": "ButtonTextComponent",
-            "id": "component-ButtonTextComponent-5d5f187b045cbb71865d04d5c8b028d42caf262a47dd00a0832df83431408b5fb2fe2cedf2d2699730122ad146cad7b63c18ba7e4631b8a502fdb621dc02e1d9",
+            "id": "component-ButtonTextComponent-16e0fc92462119a51b048b4806508f7513fd48fa4cbf6cfc338fb9bd27da1fb8639794763f7c9eeffda5f16e7bb5511645ba629fb42eda6566d6689025240ca3",
             "file": "projects/alvys-ui-components/src/lib/components/button-text/button-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-button-text",
+            "selector": "alvys-button-text",
             "styleUrls": [
                 "./button-text.component.scss"
             ],
@@ -251,7 +251,7 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 17,
                     "type": "ThemePalette",
                     "decorators": []
                 },
@@ -260,16 +260,16 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 11,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "size",
-                    "defaultValue": "ButtonSize.Large",
+                    "defaultValue": "'large'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 14,
                     "type": "ButtonSize",
                     "decorators": []
                 }
@@ -280,7 +280,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 20,
                     "type": "EventEmitter"
                 }
             ],
@@ -292,7 +292,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 28,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -304,7 +304,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\nimport { ThemePalette } from '@angular/material/core';\r\nimport { ButtonSize } from '../../enums/button-size.enum';\r\n\r\n@Component({\r\n  selector: 'app-button-text',\r\n  templateUrl: './button-text.component.html',\r\n  styleUrls: ['./button-text.component.scss'],\r\n})\r\nexport class ButtonTextComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: ButtonSize = ButtonSize.Large;\r\n\r\n  @Input()\r\n  color?: ThemePalette = 'primary';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === ButtonSize.Small ? ButtonSize.Small : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\nimport { ButtonSize, ThemePalette } from '../../types';\r\n\r\n@Component({\r\n  selector: 'alvys-button-text',\r\n  templateUrl: './button-text.component.html',\r\n  styleUrls: ['./button-text.component.scss'],\r\n})\r\nexport class ButtonTextComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: ButtonSize = 'large';\r\n\r\n  @Input()\r\n  color?: ThemePalette = 'primary';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === 'small' ? 'small' : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -319,7 +319,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 25
+                "line": 24
             },
             "implements": [
                 "OnInit"
@@ -331,7 +331,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 23
+                        "line": 22
                     }
                 }
             },
@@ -442,16 +442,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/button-outlined.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -469,7 +459,7 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Disabled",
+                "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/button-text.stories.ts",
@@ -493,6 +483,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/button-filled.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -512,16 +512,6 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/button-outlined.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -539,14 +529,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Template",
+                "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/button-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonTextComponent>",
-                "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Template",
@@ -556,7 +546,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonOutlinedComponent>",
-                "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\" [color]=\"color\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
+                "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-outlined [disabled]=\"disabled\" [size]=\"size\" [color]=\"color\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </alvys-button-outlined>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -566,79 +556,46 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonFilledComponent>",
-                "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </app-button-filled>\r\n  `,\r\n})"
+                "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </alvys-button-filled>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonTextComponent>",
+                "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-text [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </alvys-button-text>\r\n  `,\r\n})"
             }
         ],
         "functions": [],
-        "typealiases": [],
-        "enumerations": [
+        "typealiases": [
             {
                 "name": "ButtonSize",
-                "childs": [
-                    {
-                        "name": "Small",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "small"
-                    },
-                    {
-                        "name": "Large",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "large"
-                    }
-                ],
                 "ctype": "miscellaneous",
-                "subtype": "enum",
+                "subtype": "typealias",
+                "rawtype": "\"small\" | \"medium\" | \"large\" | undefined",
+                "file": "projects/alvys-ui-components/src/lib/types/button-size.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "file": "projects/alvys-ui-components/src/lib/enums/button-size.enum.ts"
+                "kind": 186
+            },
+            {
+                "name": "ThemePalette",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"primary\" | \"accent\" | \"warn\" | undefined",
+                "file": "projects/alvys-ui-components/src/lib/types/theme-palette.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
             }
         ],
+        "enumerations": [],
         "groupedVariables": {
-            "stories/button-text.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/button-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Disabled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/button-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/button-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/button-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonTextComponent>",
-                    "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-text [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-text>\r\n  `,\r\n})"
-                }
-            ],
             "stories/button-outlined.stories.ts": [
                 {
                     "name": "Default",
@@ -678,7 +635,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ButtonOutlinedComponent>",
-                    "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\" [color]=\"color\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
+                    "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-outlined [disabled]=\"disabled\" [size]=\"size\" [color]=\"color\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </alvys-button-outlined>\r\n  `,\r\n})"
                 }
             ],
             "stories/button-filled.stories.ts": [
@@ -720,7 +677,49 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ButtonFilledComponent>",
-                    "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </app-button-filled>\r\n  `,\r\n})"
+                    "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </alvys-button-filled>\r\n  `,\r\n})"
+                }
+            ],
+            "stories/button-text.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonTextComponent>",
+                    "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-text [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </alvys-button-text>\r\n  `,\r\n})"
                 }
             ],
             "projects/alvys-ui-components/src/lib/angular-material.module.ts": [
@@ -737,34 +736,35 @@
             ]
         },
         "groupedFunctions": {},
-        "groupedEnumerations": {
-            "projects/alvys-ui-components/src/lib/enums/button-size.enum.ts": [
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "projects/alvys-ui-components/src/lib/types/button-size.ts": [
                 {
                     "name": "ButtonSize",
-                    "childs": [
-                        {
-                            "name": "Small",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "small"
-                        },
-                        {
-                            "name": "Large",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "large"
-                        }
-                    ],
                     "ctype": "miscellaneous",
-                    "subtype": "enum",
+                    "subtype": "typealias",
+                    "rawtype": "\"small\" | \"medium\" | \"large\" | undefined",
+                    "file": "projects/alvys-ui-components/src/lib/types/button-size.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "file": "projects/alvys-ui-components/src/lib/enums/button-size.enum.ts"
+                    "kind": 186
+                }
+            ],
+            "projects/alvys-ui-components/src/lib/types/theme-palette.ts": [
+                {
+                    "name": "ThemePalette",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primary\" | \"accent\" | \"warn\" | undefined",
+                    "file": "projects/alvys-ui-components/src/lib/types/theme-palette.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
                 }
             ]
-        },
-        "groupedTypeAliases": {}
+        }
     },
     "routes": [],
     "coverage": {

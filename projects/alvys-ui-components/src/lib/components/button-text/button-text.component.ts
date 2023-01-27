@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ThemePalette } from '@angular/material/core';
-import { ButtonSize } from '../../enums/button-size.enum';
+import { ButtonSize, ThemePalette } from '../../types';
 
 @Component({
   selector: 'alvys-button-text',
@@ -12,7 +11,7 @@ export class ButtonTextComponent implements OnInit {
   disabled?: boolean = false;
 
   @Input()
-  size?: ButtonSize = ButtonSize.Large;
+  size?: ButtonSize = 'large';
 
   @Input()
   color?: ThemePalette = 'primary';
@@ -21,7 +20,7 @@ export class ButtonTextComponent implements OnInit {
   onClick = new EventEmitter<Event>();
 
   get classes(): string[] {
-    return [this.size === ButtonSize.Small ? ButtonSize.Small : ''];
+    return [this.size === 'small' ? 'small' : ''];
   }
 
   constructor() {}
