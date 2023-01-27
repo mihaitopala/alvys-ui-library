@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "ButtonFilledComponent",
-            "id": "component-ButtonFilledComponent-cc2de14ad2a9c5d98851d651fcca456ac4f606d1b5d97c795e62eef5681846594e682ceb5762dc97291ab25509bf4bb5b2d1750acd07c2d987ba376b0526ebfe",
+            "id": "component-ButtonFilledComponent-9591636365b24ad0e3794e3bb547588423a8c2df76e9d51ceb6bc6197b00571cc6f9807c610ae515f9f0b662bc058fcae843527ccbd15bf1b90b51d6075fe08c",
             "file": "projects/alvys-ui-components/src/lib/components/button-filled/button-filled.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -27,21 +27,30 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
                     "name": "disabled",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 12,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "size",
-                    "defaultValue": "'large'",
+                    "defaultValue": "ButtonSize.Large",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
-                    "type": "\"small\" | \"large\"",
+                    "line": 15,
+                    "type": "ButtonSize",
                     "decorators": []
                 }
             ],
@@ -51,7 +60,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 21,
                     "type": "EventEmitter"
                 }
             ],
@@ -63,7 +72,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -75,7 +84,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button-filled',\r\n  templateUrl: './button-filled.component.html',\r\n  styleUrls: ['./button-filled.component.scss'],\r\n})\r\nexport class ButtonFilledComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: 'small' | 'large' = 'large';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === 'small' ? 'small' : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\nimport { ThemePalette } from '@angular/material/core';\r\nimport { ButtonSize } from '../../enums/button-size.enum';\r\n\r\n@Component({\r\n  selector: 'app-button-filled',\r\n  templateUrl: './button-filled.component.html',\r\n  styleUrls: ['./button-filled.component.scss'],\r\n})\r\nexport class ButtonFilledComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: ButtonSize = ButtonSize.Large;\r\n\r\n  @Input()\r\n  color?: ThemePalette = 'primary';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === ButtonSize.Small ? ButtonSize.Small : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -90,7 +99,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 20
+                "line": 25
             },
             "implements": [
                 "OnInit"
@@ -102,15 +111,15 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 18
+                        "line": 23
                     }
                 }
             },
-            "templateData": "<button\r\n  mat-flat-button\r\n  [disabled]=\"disabled\"\r\n  [ngClass]=\"classes\"\r\n  color=\"primary\"\r\n  (click)=\"onClick.emit($event)\"\r\n>\r\n  <ng-content></ng-content>\r\n</button>\r\n"
+            "templateData": "<button\r\n  mat-flat-button\r\n  [disabled]=\"disabled\"\r\n  [ngClass]=\"classes\"\r\n  [color]=\"color\"\r\n  (click)=\"onClick.emit($event)\"\r\n>\r\n{{color}}\r\n  <ng-content></ng-content>\r\n</button>\r\n"
         },
         {
             "name": "ButtonOutlinedComponent",
-            "id": "component-ButtonOutlinedComponent-6cda6820367ef88f5327056fba9ecebbdea629ff6532f1ba6e88b2ed1672188ecdd2dd5c878f31953b1f2935e70f4cdf19316fca017f8a4ab4eabc5350fb5f7c",
+            "id": "component-ButtonOutlinedComponent-4d2bc2c8423448886301fb4a21b25aca647c708443795fb932b5438f7384d9d06d4934108ebde8547048134bed41aecf6b2b16f99daa03ca98093ef70ce7bd67",
             "file": "projects/alvys-ui-components/src/lib/components/button-outlined/button-outlined.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -128,21 +137,30 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
                     "name": "disabled",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 12,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "size",
-                    "defaultValue": "'large'",
+                    "defaultValue": "ButtonSize.Large",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
-                    "type": "\"small\" | \"large\"",
+                    "line": 15,
+                    "type": "ButtonSize",
                     "decorators": []
                 }
             ],
@@ -152,7 +170,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 21,
                     "type": "EventEmitter"
                 }
             ],
@@ -164,7 +182,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -176,7 +194,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button-outlined',\r\n  templateUrl: './button-outlined.component.html',\r\n  styleUrls: ['./button-outlined.component.scss'],\r\n})\r\nexport class ButtonOutlinedComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: 'small' | 'large' = 'large';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n  \r\n  get classes(): string[] {\r\n    return [this.size === 'small' ? 'small' : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\nimport { ThemePalette } from '@angular/material/core';\r\nimport { ButtonSize } from '../../enums/button-size.enum';\r\n\r\n@Component({\r\n  selector: 'app-button-outlined',\r\n  templateUrl: './button-outlined.component.html',\r\n  styleUrls: ['./button-outlined.component.scss'],\r\n})\r\nexport class ButtonOutlinedComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: ButtonSize = ButtonSize.Large;\r\n\r\n  @Input()\r\n  color?: ThemePalette = 'primary';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === ButtonSize.Small ? ButtonSize.Small : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -191,7 +209,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 20
+                "line": 25
             },
             "implements": [
                 "OnInit"
@@ -203,15 +221,15 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 18
+                        "line": 23
                     }
                 }
             },
-            "templateData": "<button\r\n  mat-stroked-button\r\n  [disabled]=\"disabled\"\r\n  (click)=\"onClick.emit($event)\"\r\n  [ngClass]=\"classes\"\r\n>\r\n  <ng-content></ng-content>\r\n</button>\r\n"
+            "templateData": "<button\r\n  mat-stroked-button\r\n  [disabled]=\"disabled\"\r\n  (click)=\"onClick.emit($event)\"\r\n  [ngClass]=\"classes\"\r\n  [color]=\"color\"\r\n>\r\n  <ng-content></ng-content>\r\n</button>\r\n"
         },
         {
             "name": "ButtonTextComponent",
-            "id": "component-ButtonTextComponent-542277ea382005dcca39f1ab402e4d74fbe469eae85851424cc11c44ee6e145e4ccf5cfc4570194dccfec723d4f90683dda7765ba8d6d5511e3f27d436feaf46",
+            "id": "component-ButtonTextComponent-5d5f187b045cbb71865d04d5c8b028d42caf262a47dd00a0832df83431408b5fb2fe2cedf2d2699730122ad146cad7b63c18ba7e4631b8a502fdb621dc02e1d9",
             "file": "projects/alvys-ui-components/src/lib/components/button-text/button-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -229,21 +247,30 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
                     "name": "disabled",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 12,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "size",
-                    "defaultValue": "'large'",
+                    "defaultValue": "ButtonSize.Large",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
-                    "type": "\"small\" | \"large\"",
+                    "line": 15,
+                    "type": "ButtonSize",
                     "decorators": []
                 }
             ],
@@ -253,7 +280,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 21,
                     "type": "EventEmitter"
                 }
             ],
@@ -265,7 +292,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -277,7 +304,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button-text',\r\n  templateUrl: './button-text.component.html',\r\n  styleUrls: ['./button-text.component.scss'],\r\n})\r\nexport class ButtonTextComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: 'small' | 'large' = 'large';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === 'small' ? 'small' : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\nimport { ThemePalette } from '@angular/material/core';\r\nimport { ButtonSize } from '../../enums/button-size.enum';\r\n\r\n@Component({\r\n  selector: 'app-button-text',\r\n  templateUrl: './button-text.component.html',\r\n  styleUrls: ['./button-text.component.scss'],\r\n})\r\nexport class ButtonTextComponent implements OnInit {\r\n  @Input()\r\n  disabled?: boolean = false;\r\n\r\n  @Input()\r\n  size?: ButtonSize = ButtonSize.Large;\r\n\r\n  @Input()\r\n  color?: ThemePalette = 'primary';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  get classes(): string[] {\r\n    return [this.size === ButtonSize.Small ? ButtonSize.Small : ''];\r\n  }\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -292,7 +319,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 20
+                "line": 25
             },
             "implements": [
                 "OnInit"
@@ -304,11 +331,11 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 18
+                        "line": 23
                     }
                 }
             },
-            "templateData": "<button\r\n  mat-button\r\n  [disabled]=\"disabled\"\r\n  (click)=\"onClick.emit($event)\"\r\n  [ngClass]=\"classes\"\r\n>\r\n  <ng-content></ng-content>\r\n</button>\r\n"
+            "templateData": "<button\r\n  mat-button\r\n  [disabled]=\"disabled\"\r\n  (click)=\"onClick.emit($event)\"\r\n  [ngClass]=\"classes\"\r\n  [color]=\"color\"\r\n>\r\n  <ng-content></ng-content>\r\n</button>\r\n"
         }
     ],
     "modules": [
@@ -519,7 +546,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonFilledComponent>",
-                "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n  </app-button-filled>\r\n  `,\r\n})"
+                "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </app-button-filled>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -529,7 +556,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonOutlinedComponent>",
-                "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
+                "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\" [color]=\"color\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -544,7 +571,31 @@
         ],
         "functions": [],
         "typealiases": [],
-        "enumerations": [],
+        "enumerations": [
+            {
+                "name": "ButtonSize",
+                "childs": [
+                    {
+                        "name": "Small",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "small"
+                    },
+                    {
+                        "name": "Large",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "large"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "projects/alvys-ui-components/src/lib/enums/button-size.enum.ts"
+            }
+        ],
         "groupedVariables": {
             "stories/button-filled.stories.ts": [
                 {
@@ -585,7 +636,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ButtonFilledComponent>",
-                    "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n  </app-button-filled>\r\n  `,\r\n})"
+                    "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </app-button-filled>\r\n  `,\r\n})"
                 }
             ],
             "stories/button-outlined.stories.ts": [
@@ -627,7 +678,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ButtonOutlinedComponent>",
-                    "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
+                    "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <app-button-outlined [disabled]=\"disabled\" [size]=\"size\" [color]=\"color\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </app-button-outlined>\r\n  `,\r\n})"
                 }
             ],
             "stories/button-text.stories.ts": [
@@ -686,7 +737,33 @@
             ]
         },
         "groupedFunctions": {},
-        "groupedEnumerations": {},
+        "groupedEnumerations": {
+            "projects/alvys-ui-components/src/lib/enums/button-size.enum.ts": [
+                {
+                    "name": "ButtonSize",
+                    "childs": [
+                        {
+                            "name": "Small",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "small"
+                        },
+                        {
+                            "name": "Large",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "large"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "projects/alvys-ui-components/src/lib/enums/button-size.enum.ts"
+                }
+            ]
+        },
         "groupedTypeAliases": {}
     },
     "routes": [],
@@ -710,7 +787,7 @@
                 "linktype": "component",
                 "name": "ButtonFilledComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -719,7 +796,7 @@
                 "linktype": "component",
                 "name": "ButtonOutlinedComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -728,7 +805,7 @@
                 "linktype": "component",
                 "name": "ButtonTextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {

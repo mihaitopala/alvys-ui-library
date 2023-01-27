@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
+import { ButtonSize } from '../../enums/button-size.enum';
 
 @Component({
   selector: 'app-button-filled',
@@ -10,13 +12,16 @@ export class ButtonFilledComponent implements OnInit {
   disabled?: boolean = false;
 
   @Input()
-  size?: 'small' | 'large' = 'large';
+  size?: ButtonSize = ButtonSize.Large;
+
+  @Input()
+  color?: ThemePalette = 'primary';
 
   @Output()
   onClick = new EventEmitter<Event>();
 
   get classes(): string[] {
-    return [this.size === 'small' ? 'small' : ''];
+    return [this.size === ButtonSize.Small ? ButtonSize.Small : ''];
   }
 
   constructor() {}

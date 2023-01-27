@@ -2,7 +2,7 @@
   mat-flat-button
   [disabled]="disabled"
   [ngClass]="classes"
-  color="primary"
+  [color]="color"
   (click)="onClick.emit($event)"
 >
   <ng-content></ng-content>
