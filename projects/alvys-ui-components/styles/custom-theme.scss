@@ -1,5 +1,7 @@
 @use '@angular/material' as mat;
+
 @import "@angular/material/theming";
+@include mat.core();
 
 $blue-primary-palette: (
   50: #e3f3ff,
@@ -106,6 +108,174 @@ $alvys-ui-warn: mat.define-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
+
+$custom-typography-levels: mat-typography-config(
+  $input: mat-typography-level(14px, 1.125, 400)
+);
+
+// Typography configurations according to Figma
+@mixin mat-custom-typography($config, $selector: '.mat-typography') {
+  .mat-h1,
+  .mat-headline,
+  #{$selector} h1 {
+    font-size: 96px;
+    font-weight: 300;
+    line-height: 112px;
+    letter-spacing: -0.5px;
+    margin: 0px;
+  }
+
+  .mat-h2,
+  .mat-title,
+  #{$selector} h2 {
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 70px;
+    margin: 0px;
+  }
+
+  .mat-h3,
+  .mat-subheading-2,
+  #{$selector} h3 {
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+    margin: 0px;
+  }
+
+  .mat-h4,
+  .mat-subheading-1,
+  #{$selector} h4 {
+    font-weight: normal;
+    font-size: 34px;
+    line-height: 40px;
+    margin: 0px;
+  }
+
+  .mat-h5,
+  #{$selector} h5 {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.18px;
+    margin: 0px;
+  }
+
+  .mat-h6,
+  #{$selector} h6 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.15px;
+    margin: 0px;
+  }
+
+  .mat-body-strong,
+  .mat-body-2 {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+
+    letter-spacing: 0.1px;
+    margin: 0px;
+  }
+
+  .mat-body,
+  .mat-body-1,
+  #{$selector} {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0px;
+
+    p {
+      margin: 0px;
+    }
+  }
+
+  .mat-small,
+  .mat-caption {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    margin: 0px;
+  }
+
+  .mat-label {
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 1.5px;
+  }
+
+  .mat-subtitle-1 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    margin: 0px;
+  }
+
+  .mat-subtitle-2 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    margin: 0px;
+  }
+
+  .mat-overline {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 1.5px;
+  }
+
+  .mat-table-text {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+  }
+
+  .mat-display-4,
+  #{$selector} .mat-display-4 {
+    @include mat-typography-level-to-styles($config, display-4);
+    margin: 0px;
+  }
+
+  .mat-display-3,
+  #{$selector} .mat-display-3 {
+    @include mat-typography-level-to-styles($config, display-3);
+    margin: 0px;
+  }
+
+  .mat-display-2,
+  #{$selector} .mat-display-2 {
+    @include mat-typography-level-to-styles($config, display-2);
+    margin: 0px;
+  }
+
+  .mat-display-1,
+  #{$selector} .mat-display-1 {
+    @include mat-typography-level-to-styles($config, display-1);
+    margin: 0px;
+  }
+
+  .mat-header-title {
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 0px;
+  }
+
+  .mat-text-uppercase {
+    text-transform: uppercase;
+  }
+}
+
+
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
 $alvys-ui-theme: mat.define-light-theme(
   (
     color: (
@@ -120,3 +290,4 @@ $alvys-ui-theme: mat.define-light-theme(
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($alvys-ui-theme);
+@include mat-custom-typography($custom-typography-levels);

@@ -174,10 +174,10 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/cdk@^15.1.1", "@angular/cdk@15.1.1":
-  "integrity" "sha512-99zaW+EqS/pJh2BLxC+L+/mAyaC3oncRUqRL4WWLENZI2lqD6mCe/kRYDL57WbSZaI54Of38u9GhkBVA/0rn7A=="
-  "resolved" "https://registry.npmjs.org/@angular/cdk/-/cdk-15.1.1.tgz"
-  "version" "15.1.1"
+"@angular/cdk@^15.1.1", "@angular/cdk@15.1.2":
+  "integrity" "sha512-LO3b/akdcPaRwSa+rbrI02THwQm+O4Z3rDIvbDTHyCf3Vmk3p7gsp8WtKAMMJlkCF88VQ3Wh4ZZcfNAtbVO7EA=="
+  "resolved" "https://registry.npmjs.org/@angular/cdk/-/cdk-15.1.2.tgz"
+  "version" "15.1.2"
   dependencies:
     "tslib" "^2.3.0"
   optionalDependencies:
@@ -251,10 +251,17 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/material@^15.1.1":
-  "integrity" "sha512-QhyTJv9CnimXKXb4LCH93ovJVAdnoHyElwspl80PcfAV/6A6VrRQAflFoul0WL4WPrV50DG7TWYiEwHPpblbCw=="
-  "resolved" "https://registry.npmjs.org/@angular/material/-/material-15.1.1.tgz"
-  "version" "15.1.1"
+"@angular/material-moment-adapter@^15.1.2":
+  "integrity" "sha512-tiQy9WhlF3V8BERiU9Fk5rDT0IUAos00sVXgvHJWrAYoc5B/bNRKL1ZK1afHTRAA3hURJFDWHEvyYybKR3vVXA=="
+  "resolved" "https://registry.npmjs.org/@angular/material-moment-adapter/-/material-moment-adapter-15.1.2.tgz"
+  "version" "15.1.2"
+  dependencies:
+    "tslib" "^2.3.0"
+
+"@angular/material@^15.1.1", "@angular/material@15.1.2":
+  "integrity" "sha512-ozyFcFRca+iIArVcPMdTwUj5pWa9HcO5zalxWhykp5cYCyG3rw2RGbae/kXw7edUZUr977POtMYTOsAT2Aw7fg=="
+  "resolved" "https://registry.npmjs.org/@angular/material/-/material-15.1.2.tgz"
+  "version" "15.1.2"
   dependencies:
     "@material/animation" "15.0.0-canary.684e33d25.0"
     "@material/auto-init" "15.0.0-canary.684e33d25.0"
@@ -10412,6 +10419,11 @@
   "integrity" "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw=="
   "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   "version" "1.0.4"
+
+"moment@^2.18.1", "moment@^2.29.4":
+  "integrity" "sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w=="
+  "resolved" "https://registry.npmjs.org/moment/-/moment-2.29.4.tgz"
+  "version" "2.29.4"
 
 "morgan@^1.10.0":
   "integrity" "sha512-AbegBVI4sh6El+1gNwvD5YIck7nSA36weD7xvIxG4in80j/UoK8AEGaWnnz8v1GxonMCltmlNs5ZKbGvl9b1XQ=="

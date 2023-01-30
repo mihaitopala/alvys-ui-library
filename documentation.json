@@ -1,7 +1,93 @@
 {
     "pipes": [],
     "interfaces": [],
-    "injectables": [],
+    "injectables": [
+        {
+            "name": "CustomDateAdapter",
+            "id": "injectable-CustomDateAdapter-c47eb696ce58c34756a225613952a0c6f93b9deba514b6f5e4e2938c201635e1ac5b48d3d39798f542c63021cd4469a387be2d44837a3e72f255b03e1d31359c",
+            "file": "projects/alvys-ui-components/src/lib/custom-providers/custom-material-date-adapter.provider.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "today",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\n",
+                    "description": "",
+                    "modifierKind": [
+                        158
+                    ],
+                    "jsdoctags": [
+                        {
+                            "tagName": {
+                                "pos": 873,
+                                "end": 880,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>the current date as date from PC ignoring the &quot;useUtc&quot; configuration</p>\n"
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n\n",
+            "sourceCode": "import { Inject, Injectable, Optional } from '@angular/core';\r\nimport {\r\n  MatMomentDateAdapterOptions,\r\n  MAT_MOMENT_DATE_ADAPTER_OPTIONS,\r\n  MomentDateAdapter\r\n} from '@angular/material-moment-adapter';\r\nimport { MAT_DATE_LOCALE } from '@angular/material/core';\r\nimport * as moment from 'moment';\r\n\r\n/**\r\n * @description custom date adapter which we can customize on our needs. Currently only needed to display in calendar the local date from PC ignoring the useUtc configuration\r\n */\r\n@Injectable()\r\nexport class CustomDateAdapter extends MomentDateAdapter {\r\n  constructor(\r\n    @Optional() @Inject(MAT_DATE_LOCALE) dateLocale: string,\r\n    @Optional() @Inject(MAT_MOMENT_DATE_ADAPTER_OPTIONS) adapterOptions: MatMomentDateAdapterOptions\r\n  ) {\r\n    super(dateLocale, adapterOptions);\r\n  }\r\n  /**\r\n   * @description overwrite the method from Moment Date Adapter\r\n   * @returns  the current date as date from PC ignoring the \"useUtc\" configuration\r\n   */\r\n  override today(): any {\r\n    return moment();\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dateLocale",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "adapterOptions",
+                        "type": "MatMomentDateAdapterOptions",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "dateLocale",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "adapterOptions",
+                        "type": "MatMomentDateAdapterOptions",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": "MomentDateAdapter",
+            "type": "injectable"
+        }
+    ],
     "guards": [],
     "interceptors": [],
     "classes": [],
@@ -336,18 +422,68 @@
                 }
             },
             "templateData": "<button\r\n  mat-button\r\n  [disabled]=\"disabled\"\r\n  (click)=\"onClick.emit($event)\"\r\n  [ngClass]=\"classes\"\r\n  [color]=\"color\"\r\n>\r\n  <ng-content></ng-content>\r\n</button>\r\n"
+        },
+        {
+            "name": "DatePickerComponent",
+            "id": "component-DatePickerComponent-05db8702637ee00ae61086a86c4dea3ed4415097293c3f65d4f318b56a1703fdef7b4112efb213c85bd25cbd411a151552904036fe5f2036fcc107bce085567c",
+            "file": "projects/alvys-ui-components/src/lib/components/date-picker/date-picker.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "alvys-date-picker",
+            "styleUrls": [
+                "./date-picker.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./date-picker.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "'Date'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'alvys-date-picker',\n  templateUrl: './date-picker.component.html',\n  styleUrls: ['./date-picker.component.scss'],\n})\nexport class DatePickerComponent {\n  @Input()\n  label?: string = 'Date';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./date-picker.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<mat-form-field appearance=\"fill\">\n  <mat-label>{{ label }}</mat-label>\n  <input matInput formDatePicker readonly [matDatepicker]=\"dueDatePicker\" />\n  <mat-datepicker-toggle matSuffix [for]=\"dueDatePicker\">\n    <mat-icon matDatepickerToggleIcon class=\"material-icons-outlined\"\n      >calendar_today</mat-icon\n    >\n  </mat-datepicker-toggle>\n  <mat-datepicker #dueDatePicker></mat-datepicker>\n</mat-form-field>\n"
         }
     ],
     "modules": [
         {
             "name": "AlvysUiComponentsModule",
-            "id": "module-AlvysUiComponentsModule-093c996f90e6e12743e05a924995b8dfd54c89c2435355e8e4dd468dc008a6b26d300c47b541c00aa00efe63576d619d8f0993365f1bf4c47ec8001fa9128d84",
+            "id": "module-AlvysUiComponentsModule-bedcb0a7a39f1588ca620c6dd7c9eade0b7230d3e47e5e6a7dc8d0ee8d40e3ad73906b59bfc98a347b95cd2766e1e62a736393fe62acfcdd8dedb19078d9bf41",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/alvys-ui-components/src/lib/alvys-ui.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { AngularMaterialModule } from './angular-material.module';\r\nimport {\r\n  ButtonOutlinedComponent,\r\n  ButtonFilledComponent,\r\n  ButtonTextComponent,\r\n} from './components';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ButtonOutlinedComponent,\r\n    ButtonFilledComponent,\r\n    ButtonTextComponent,\r\n  ],\r\n  imports: [BrowserModule, BrowserAnimationsModule, AngularMaterialModule],\r\n  exports: [\r\n    ButtonOutlinedComponent,\r\n    ButtonFilledComponent,\r\n    ButtonTextComponent,\r\n  ],\r\n})\r\nexport class AlvysUiComponentsModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { AngularMaterialModule } from './angular-material.module';\r\nimport {\r\n  ButtonOutlinedComponent,\r\n  ButtonFilledComponent,\r\n  ButtonTextComponent,\r\n  DatePickerComponent,\r\n} from './components';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ButtonOutlinedComponent,\r\n    ButtonFilledComponent,\r\n    ButtonTextComponent,\r\n    DatePickerComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    BrowserAnimationsModule,\r\n    FormsModule,\r\n    ReactiveFormsModule,\r\n    AngularMaterialModule,\r\n  ],\r\n  exports: [\r\n    ButtonOutlinedComponent,\r\n    ButtonFilledComponent,\r\n    ButtonTextComponent,\r\n    DatePickerComponent\r\n  ],\r\n})\r\nexport class AlvysUiComponentsModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -364,6 +500,9 @@
                         },
                         {
                             "name": "ButtonTextComponent"
+                        },
+                        {
+                            "name": "DatePickerComponent"
                         }
                     ]
                 },
@@ -386,6 +525,9 @@
                         },
                         {
                             "name": "ButtonTextComponent"
+                        },
+                        {
+                            "name": "DatePickerComponent"
                         }
                     ]
                 },
@@ -401,13 +543,13 @@
         },
         {
             "name": "AngularMaterialModule",
-            "id": "module-AngularMaterialModule-ef394b3288a46f178cdc68989e31388e168bedf3215c97c1b35ed87a273e6df25badb835a932620beec5dcdd03dbd674562f96fdf76ff013d576d4645d02497a",
+            "id": "module-AngularMaterialModule-a60784ec55d712d7f5c27476433d2fe4a4a8f696784874c47989d684719c263066ad92c4279b16ef530f16e58b23d1b4cb71fa5ed12b5ac83997bf40b628d20c",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/alvys-ui-components/src/lib/angular-material.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatIconModule } from '@angular/material/icon';\r\n\r\nconst materialModules = [MatButtonModule, MatIconModule];\r\n\r\n@NgModule({\r\n  imports: [CommonModule, ...materialModules],\r\n  exports: [...materialModules],\r\n})\r\nexport class AngularMaterialModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatFormFieldModule } from '@angular/material/form-field';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport { MatDatepickerModule } from '@angular/material/datepicker';\r\nimport {OverlayModule} from '@angular/cdk/overlay';\r\nimport {\r\n  MatMomentDateModule,\r\n  MAT_MOMENT_DATE_ADAPTER_OPTIONS,\r\n  MAT_MOMENT_DATE_FORMATS,\r\n} from '@angular/material-moment-adapter';\r\nimport {\r\n  DateAdapter,\r\n  MatNativeDateModule,\r\n  MatRippleModule,\r\n  MAT_DATE_FORMATS,\r\n  MAT_DATE_LOCALE,\r\n} from '@angular/material/core';\r\nimport {\r\n  MatDialogConfig,\r\n  MatDialogModule,\r\n  MAT_DIALOG_DEFAULT_OPTIONS,\r\n} from '@angular/material/dialog';\r\nimport { CustomDateAdapter } from './custom-providers/custom-material-date-adapter.provider';\r\n\r\nconst materialModules = [\r\n  OverlayModule,\r\n  MatButtonModule,\r\n  MatIconModule,\r\n  MatFormFieldModule,\r\n  MatInputModule,\r\n  MatDatepickerModule,\r\n  MatDialogModule,\r\n  MatMomentDateModule,\r\n  MatRippleModule,\r\n  MatNativeDateModule\r\n  \r\n];\r\n\r\n@NgModule({\r\n  imports: [CommonModule, ...materialModules],\r\n  exports: [...materialModules],\r\n  providers: [\r\n    {\r\n      provide: MAT_DIALOG_DEFAULT_OPTIONS,\r\n      useValue: {\r\n        minWidth: '25vw',\r\n        maxWidth: '65vw',\r\n        hasBackdrop: true,\r\n        disableClose: true,\r\n        closeOnNavigation: true,\r\n      } as MatDialogConfig,\r\n    },\r\n    {\r\n      provide: DateAdapter,\r\n      useClass: CustomDateAdapter,\r\n      deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS],\r\n    },\r\n    { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } },\r\n    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },\r\n  ],\r\n})\r\nexport class AngularMaterialModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -442,6 +584,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/button-filled.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/button-outlined.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -452,7 +604,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-filled.stories.ts",
+                "file": "stories/date-picker.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -472,7 +624,7 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-outlined.stories.ts",
+                "file": "stories/button-filled.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -482,7 +634,7 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-filled.stories.ts",
+                "file": "stories/button-outlined.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -506,13 +658,13 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[MatButtonModule, MatIconModule]"
+                "defaultValue": "[\r\n  OverlayModule,\r\n  MatButtonModule,\r\n  MatIconModule,\r\n  MatFormFieldModule,\r\n  MatInputModule,\r\n  MatDatepickerModule,\r\n  MatDialogModule,\r\n  MatMomentDateModule,\r\n  MatRippleModule,\r\n  MatNativeDateModule\r\n  \r\n]"
             },
             {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-outlined.stories.ts",
+                "file": "stories/button-filled.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -522,7 +674,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-filled.stories.ts",
+                "file": "stories/button-outlined.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -542,6 +694,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/button-filled.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonFilledComponent>",
+                "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </alvys-button-filled>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/button-outlined.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -552,11 +714,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-filled.stories.ts",
+                "file": "stories/date-picker.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonFilledComponent>",
-                "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </alvys-button-filled>\r\n  `,\r\n})"
+                "type": "Story<DatePickerComponent>",
+                "defaultValue": "(args: DatePickerComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -596,6 +758,48 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "stories/button-filled.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-filled.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-filled.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-filled.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button-filled.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonFilledComponent>",
+                    "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </alvys-button-filled>\r\n  `,\r\n})"
+                }
+            ],
             "stories/button-outlined.stories.ts": [
                 {
                     "name": "Default",
@@ -638,32 +842,12 @@
                     "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-outlined [disabled]=\"disabled\" [size]=\"size\" [color]=\"color\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </alvys-button-outlined>\r\n  `,\r\n})"
                 }
             ],
-            "stories/button-filled.stories.ts": [
+            "stories/date-picker.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-filled.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Disabled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/button-filled.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/button-filled.stories.ts",
+                    "file": "stories/date-picker.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -673,11 +857,11 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-filled.stories.ts",
+                    "file": "stories/date-picker.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<ButtonFilledComponent>",
-                    "defaultValue": "(\r\n  args: ButtonFilledComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-filled [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\" >\r\n    Button\r\n    <mat-icon>keyboard_arrow_down</mat-icon>\r\n  </alvys-button-filled>\r\n  `,\r\n})"
+                    "type": "Story<DatePickerComponent>",
+                    "defaultValue": "(args: DatePickerComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "stories/button-text.stories.ts": [
@@ -731,7 +915,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[MatButtonModule, MatIconModule]"
+                    "defaultValue": "[\r\n  OverlayModule,\r\n  MatButtonModule,\r\n  MatIconModule,\r\n  MatFormFieldModule,\r\n  MatInputModule,\r\n  MatDatepickerModule,\r\n  MatDialogModule,\r\n  MatMomentDateModule,\r\n  MatRippleModule,\r\n  MatNativeDateModule\r\n  \r\n]"
                 }
             ]
         },
@@ -809,6 +993,24 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/alvys-ui-components/src/lib/components/date-picker/date-picker.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DatePickerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/alvys-ui-components/src/lib/custom-providers/custom-material-date-adapter.provider.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "CustomDateAdapter",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "stories/button-filled.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -920,6 +1122,26 @@
             },
             {
                 "filePath": "stories/button-text.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/date-picker.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/date-picker.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
