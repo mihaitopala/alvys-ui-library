@@ -1,0 +1,196 @@
+//grey shades
+$mat-grey-50: map-get($mat-grey, 50);
+$mat-grey-100: map-get($mat-grey, 100);
+$mat-grey-200: map-get($mat-grey, 200);
+$mat-grey-300: map-get($mat-grey, 300);
+$mat-grey-400: map-get($mat-grey, 400);
+$mat-grey-500: map-get($mat-grey, 500);
+$mat-grey-600: map-get($mat-grey, 600);
+$mat-grey-700: map-get($mat-grey, 700);
+$mat-grey-800: map-get($mat-grey, 800);
+$mat-grey-900: map-get($mat-grey, 900);
+
+//blue shades
+$mat-blue-50: map-get($mat-blue, 50);
+$mat-blue-100: map-get($mat-blue, 100);
+$mat-blue-200: map-get($mat-blue, 200);
+$mat-blue-300: map-get($mat-blue, 300);
+$mat-blue-400: map-get($mat-blue, 400);
+$mat-blue-500: map-get($mat-blue, 500);
+$mat-blue-600: map-get($mat-blue, 600);
+$mat-blue-700: map-get($mat-blue, 700);
+$mat-blue-800: map-get($mat-blue, 800);
+$mat-blue-900: map-get($mat-blue, 900);
+
+//colors
+$success: #69a220;
+$error: #c42a2a;
+$warning: #f5c400;
+$secondary: #f05523;
+
+$orange-complementary-palette: #fa7900;
+
+//blue
+.blue {
+  background-color: $mat-blue-100;
+}
+
+.blue.darken-9 {
+  background-color: $mat-blue-900;
+}
+
+.blue.darken-8 {
+  background-color: $mat-blue-800;
+}
+
+.blue.darken-7 {
+  background-color: $mat-blue-700;
+}
+
+.blue.darken-6 {
+  background-color: $mat-blue-600;
+}
+
+.blue.darken-5 {
+  background-color: $mat-blue-500;
+}
+
+.blue.darken-4 {
+  background-color: $mat-blue-400;
+}
+
+.blue.darken-3 {
+  background-color: $mat-blue-300;
+}
+
+.blue.darken-2 {
+  background-color: $mat-blue-200;
+}
+
+.blue.darken-1 {
+  background-color: $mat-blue-100;
+}
+
+.blue-text {
+  color: $mat-blue-100;
+}
+
+.blue-text.text-darken-9 {
+  color: $mat-blue-900;
+}
+
+.blue-text.text-darken-8 {
+  color: $mat-blue-800;
+}
+
+.blue-text.text-darken-7 {
+  color: $mat-blue-700;
+}
+
+.blue-text.text-darken-6 {
+  color: $mat-blue-600;
+}
+
+.blue-text.text-darken-5 {
+  color: $mat-blue-500;
+}
+
+.blue-text.text-darken-4 {
+  color: $mat-blue-400;
+}
+
+.blue-text.text-darken-3 {
+  color: $mat-blue-300;
+}
+
+.blue-text.text-darken-2 {
+  color: $mat-blue-200;
+}
+
+.blue-text.text-darken-1 {
+  color: $mat-blue-100;
+}
+
+//grey
+
+// BackGround
+.grey-bg-9 {
+  background-color: $mat-grey-900;
+}
+
+.grey-bg-8 {
+  background-color: $mat-grey-800;
+}
+
+.grey-bg-7 {
+  background-color: $mat-grey-700;
+}
+
+.grey-bg-6 {
+  background-color: $mat-grey-600;
+}
+
+.grey-bg-5 {
+  background-color: $mat-grey-500;
+}
+
+.grey-bg-4 {
+  background-color: $mat-grey-400;
+}
+
+.grey-bg-3 {
+  background-color: $mat-grey-300;
+}
+
+.grey-bg-2 {
+  background-color: $mat-grey-200;
+}
+
+.grey-bg-1 {
+  background-color: $mat-grey-100;
+}
+
+.grey-bg-0.\5 {
+  background-color: $mat-grey-50;
+}
+
+// TEXT
+
+.grey-text-9 {
+  color: $mat-grey-900;
+}
+
+.grey-text-8 {
+  color: $mat-grey-800;
+}
+
+.grey-text-7 {
+  color: $mat-grey-700;
+}
+
+.grey-text-6 {
+  color: $mat-grey-600;
+}
+
+.grey-text-5 {
+  color: $mat-grey-500;
+}
+
+.grey-text-4 {
+  color: $mat-grey-400;
+}
+
+.grey-text-3 {
+  color: $mat-grey-300;
+}
+
+.grey-text-2 {
+  color: $mat-grey-200;
+}
+
+.grey-text-1 {
+  color: $mat-grey-100;
+}
+.grey-text-0.\5 {
+  color: $mat-grey-50;
+}

@@ -1,0 +1,19 @@
+.date-picker {
+  font-weight: 400;
+  font-size: 14px;
+  .date-picker-close-button {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    margin-right: -14px;
+    .date-picker-close-icon {
+      font-size: 14px;
+    }
+  }
+}
+
+// .mat-datepicker-actions {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }

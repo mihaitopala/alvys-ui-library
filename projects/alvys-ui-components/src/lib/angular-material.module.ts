@@ -5,8 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {OverlayModule} from '@angular/cdk/overlay';
-import {MatSelectModule} from '@angular/material/select';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { MatSelectModule } from '@angular/material/select';
 import {
   MatMomentDateModule,
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
@@ -26,6 +26,12 @@ import {
 } from '@angular/material/dialog';
 import { CustomDateAdapter } from './custom-providers/custom-material-date-adapter.provider';
 import { BrowserModule } from '@angular/platform-browser';
+import { DirectivesModule } from './directives/directives.module';
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatTimepickerModule,
+  NgxMatNativeDateModule,
+} from '@angular-material-components/datetime-picker';
 
 const materialModules = [
   OverlayModule,
@@ -38,8 +44,11 @@ const materialModules = [
   MatMomentDateModule,
   MatRippleModule,
   MatNativeDateModule,
-  MatSelectModule
-  
+  MatSelectModule,
+  DirectivesModule,
+  NgxMatDatetimePickerModule,
+  NgxMatTimepickerModule,
+  NgxMatNativeDateModule,
 ];
 
 @NgModule({

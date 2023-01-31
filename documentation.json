@@ -91,7 +91,67 @@
     "guards": [],
     "interceptors": [],
     "classes": [],
-    "directives": [],
+    "directives": [
+        {
+            "name": "FormDatePickerDirective",
+            "id": "directive-FormDatePickerDirective-508c749f93073b4d0dfbad8756099b382dd651cc8f4b46e21e707b119b2223952f7bc21e59967f9854db182c7e34aa89a4c04603fcc1b16ed10889e75035e347",
+            "file": "projects/alvys-ui-components/src/lib/directives/form-date-picker.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { AfterViewInit, Directive, ElementRef } from '@angular/core';\r\n\r\n@Directive({\r\n  selector: '[formDatePicker]'\r\n})\r\nexport class FormDatePickerDirective implements AfterViewInit {\r\n  constructor(private el: ElementRef) { }\r\n\r\n  ngAfterViewInit() {\r\n    (this.el.nativeElement as HTMLInputElement).readOnly = true;\r\n  }\r\n}\r\n",
+            "selector": "[formDatePicker]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 9,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "implements": [
+                "AfterViewInit"
+            ],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 6,
+                "jsdoctags": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
     "components": [
         {
             "name": "ButtonFilledComponent",
@@ -425,7 +485,7 @@
         },
         {
             "name": "DatePickerComponent",
-            "id": "component-DatePickerComponent-05db8702637ee00ae61086a86c4dea3ed4415097293c3f65d4f318b56a1703fdef7b4112efb213c85bd25cbd411a151552904036fe5f2036fcc107bce085567c",
+            "id": "component-DatePickerComponent-96b51519e9c14d4333ab402d5e63275eecde772e2f0974445ac371d07bbff5116acac9eb9c44f5827e4a201b11507c257f472e189daed0fa75f4a1a8cc1096fd",
             "file": "projects/alvys-ui-components/src/lib/components/date-picker/date-picker.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -462,7 +522,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'alvys-date-picker',\n  templateUrl: './date-picker.component.html',\n  styleUrls: ['./date-picker.component.scss'],\n})\nexport class DatePickerComponent {\n  @Input()\n  label?: string = 'Date';\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'alvys-date-picker',\n  templateUrl: './date-picker.component.html',\n  styleUrls: ['./date-picker.component.scss']\n})\nexport class DatePickerComponent {\n  @Input()\n  label?: string = 'Date'\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -471,19 +531,431 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-form-field appearance=\"fill\">\n  <mat-label>{{ label }}</mat-label>\n  <input matInput formDatePicker readonly [matDatepicker]=\"dueDatePicker\" />\n  <mat-datepicker-toggle matSuffix [for]=\"dueDatePicker\">\n    <mat-icon matDatepickerToggleIcon class=\"material-icons-outlined\"\n      >calendar_today</mat-icon\n    >\n  </mat-datepicker-toggle>\n  <mat-datepicker #dueDatePicker></mat-datepicker>\n</mat-form-field>\n"
+            "templateData": "<mat-form-field appearance=\"fill\">\n  <mat-label>{{ label }}</mat-label>\n  <input matInput readonly [matDatepicker]=\"datePicker\" />\n  <mat-datepicker-toggle matSuffix [for]=\"datePicker\">\n    <mat-icon matDatepickerToggleIcon class=\"material-icons-outlined\"\n      >calendar_today</mat-icon\n    >\n  </mat-datepicker-toggle>\n  <mat-datepicker #datePicker></mat-datepicker>\n</mat-form-field>\n"
+        },
+        {
+            "name": "RangeDatePickerComponent",
+            "id": "component-RangeDatePickerComponent-5ce060deff4abec7a29d272fdb8e8440d18acc705b275d1478a1cdd3b8ee41f6452b8f532305edbc85e5a94450821a48d98ca09ff795ec98c5a0e8b7d398c1a6",
+            "file": "projects/alvys-ui-components/src/lib/components/range-date-picker/range-date-picker.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "alvys-range-date-picker",
+            "styleUrls": [
+                "./range-date-picker.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./range-date-picker.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "clearValue",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "datePicker",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDateRangePicker<literal type>",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'picker'"
+                        }
+                    ],
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "datePickerForm",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "buildForm",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "clearFormValue",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Output, ViewChild } from '@angular/core';\nimport { FormControl, FormGroup } from '@angular/forms';\nimport { MatDateRangePicker } from '@angular/material/datepicker';\n\n@Component({\n  selector: 'alvys-range-date-picker',\n  templateUrl: './range-date-picker.component.html',\n  styleUrls: ['./range-date-picker.component.scss'],\n})\nexport class RangeDatePickerComponent {\n  @ViewChild('picker')\n  public datePicker!: MatDateRangePicker<{\n    start: Date | null;\n    end: Date | null;\n  }>;\n  @Output()\n  clearValue? = new EventEmitter<Event>();\n\n  datePickerForm!: FormGroup;\n\n  public get startDateControl(): FormControl {\n    return this.datePickerForm.controls?.['StartDate'] as FormControl;\n  }\n\n  public get endDateControl(): FormControl {\n    return this.datePickerForm.controls?.['EndDate'] as FormControl;\n  }\n\n  constructor() {\n    this.buildForm();\n  }\n\n  buildForm(): void {\n    this.datePickerForm = new FormGroup({\n      start: new FormControl(null),\n      end: new FormControl(null),\n    });\n  }\n\n  clearFormValue(): void {\n    this.datePickerForm.reset();\n    this.clearValue?.emit();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".date-picker-actions {\r\n    display: flex;\r\n    align-items: center;\r\n    // justify-content: space-between;\r\n    justify-content: flex-end;\r\n    width: 100%;\r\n\r\n    .right-section {\r\n        display: flex;\r\n        align-items: center;\r\n    }\r\n}",
+                    "styleUrl": "./range-date-picker.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 27
+            },
+            "accessors": {
+                "startDateControl": {
+                    "name": "startDateControl",
+                    "getSignature": {
+                        "name": "startDateControl",
+                        "type": "",
+                        "returnType": "FormControl",
+                        "line": 21
+                    }
+                },
+                "endDateControl": {
+                    "name": "endDateControl",
+                    "getSignature": {
+                        "name": "endDateControl",
+                        "type": "",
+                        "returnType": "FormControl",
+                        "line": 25
+                    }
+                }
+            },
+            "templateData": "<mat-form-field appearance=\"fill\">\n  <mat-label>Enter a date range</mat-label>\n  <mat-date-range-input [formGroup]=\"datePickerForm\" [rangePicker]=\"picker\">\n    <input\n      matStartDate\n      formControlName=\"start\"\n      formDatePicker\n      placeholder=\"Start date\"\n    />\n    <input\n      matEndDate\n      formControlName=\"end\"\n      formDatePicker\n      placeholder=\"End date\"\n    />\n  </mat-date-range-input>\n  <mat-datepicker-toggle matIconSuffix [for]=\"picker\"></mat-datepicker-toggle>\n  <mat-date-range-picker #picker>\n    <mat-date-range-picker-actions>\n      <div class=\"date-picker-actions\">\n        <!-- <button\n            mat-button\n            color=\"primary\"\n            disableRipple=\"true\"\n            (click)=\"clearFormValue()\"\n          >\n            Clear\n          </button> -->\n\n        <!-- <div class=\"right-section\"> -->\n        <button mat-button color=\"primary\" matDateRangePickerCancel>\n          Cancel\n        </button>\n        <button mat-button color=\"primary\" matDateRangePickerApply>\n          Apply\n        </button>\n        <!-- </div> -->\n      </div>\n    </mat-date-range-picker-actions>\n  </mat-date-range-picker>\n</mat-form-field>\n"
+        },
+        {
+            "name": "TimePickerComponent",
+            "id": "component-TimePickerComponent-e3ca9e9d5ebd064d44dabd744918c52c93af74c0f4728b8fa79dfeae2ccab179fe51fbd055223cb56aac67a412d2865f1cd62abda5aed7fb4f1a97e80f2fdfec",
+            "file": "projects/alvys-ui-components/src/lib/components/time-picker/time-picker.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "{\n    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => TimePickerComponent), multi: true\n}",
+                    "type": "component"
+                },
+                {
+                    "name": "{ provide: NgxMatDateAdapter, useClass: NgxMatMomentAdapter }"
+                }
+            ],
+            "selector": "alvys-time-picker",
+            "styleUrls": [
+                "./time-picker.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./time-picker.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "'Time'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 26,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "isTimeOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "onChange",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 27,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "onTouch",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 28,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "time",
+                    "defaultValue": "moment('12:00 AM', ['hh:mm a'])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "apply",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 53,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "changeTimeOpen",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 49,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "clear",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 59,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "registerOnChange",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "function": []
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "function": [],
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "registerOnTouched",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "function": []
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 41,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "function": [],
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setDisabledState",
+                    "args": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 45,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "writeValue",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, forwardRef, Input } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\nimport { NgxMatDateAdapter } from '@angular-material-components/datetime-picker';\nimport { NgxMatMomentAdapter } from '@angular-material-components/moment-adapter';\nimport * as moment from 'moment';\n\n@Component({\n  selector: 'alvys-time-picker',\n  templateUrl: './time-picker.component.html',\n  styleUrls: ['./time-picker.component.scss'],\n  providers: [\n    {\n      provide: NG_VALUE_ACCESSOR,\n      useExisting: forwardRef(() => TimePickerComponent),\n      multi: true\n    },\n    { provide: NgxMatDateAdapter, useClass: NgxMatMomentAdapter }\n  ]\n})\nexport class TimePickerComponent implements ControlValueAccessor {\n  @Input() label: string = 'Time';\n  public isTimeOpen: boolean = false;\n  public time = moment('12:00 AM', ['hh:mm a']);\n  public value: string | undefined;\n\n  public disabled: boolean = false;\n  private onChange = (value: string) => void 0;\n  private onTouch = () => void 0;\n\n  writeValue(value: any): void {\n    this.value = value;\n    if (this.value) {\n      this.time = moment(this.value);\n    }\n  }\n\n  registerOnChange(fn: () => undefined): void {\n    this.onChange = fn;\n  }\n\n  registerOnTouched(fn: () => undefined): void {\n    this.onTouch = fn;\n  }\n\n  setDisabledState(isDisabled: boolean) {\n    this.disabled = isDisabled;\n  }\n\n  changeTimeOpen(): void {\n    this.isTimeOpen = !this.isTimeOpen;\n  }\n\n  apply(): void {\n    this.value = this.time.toISOString();\n    this.changeTimeOpen();\n    this.onChange(this.value);\n  }\n\n  clear(): void {\n    this.time = moment(this.value);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./time-picker.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "ControlValueAccessor"
+            ],
+            "templateData": "<mat-form-field appearance=\"fill\" cdkOverlayOrigin #trigger=\"cdkOverlayOrigin\">\n  <mat-label>{{ label }}</mat-label>\n  <input\n    matInput\n    readonly\n    [disabled]=\"disabled\"\n    [value]=\"value | date: 'hh:mm a'\"\n  />\n  <button\n    mat-icon-button\n    matSuffix\n    (click)=\"changeTimeOpen()\"\n    type=\"button\"\n    [disabled]=\"disabled\"\n  >\n    <mat-icon class=\"time-grey-icon\">schedule</mat-icon>\n  </button>\n</mat-form-field>\n\n<ng-template\n  cdkConnectedOverlay\n  [cdkConnectedOverlayOrigin]=\"trigger\"\n  [cdkConnectedOverlayOpen]=\"isTimeOpen\"\n>\n  <div class=\"time-container mat-elevation-z8\">\n    <!-- <div class=\"time-picker-header\">\n      <h6>Select Time</h6>\n      <button mat-icon-button type=\"button\" (click)=\"changeTimeOpen()\">\n        <mat-icon class=\"time-grey-icon\">close</mat-icon>\n      </button>\n    </div> -->\n    <ngx-mat-timepicker\n      [(ngModel)]=\"time\"\n      [showSpinners]=\"true\"\n      [enableMeridian]=\"true\"\n      [disabled]=\"disabled\"\n      [defaultTime]=\"[0, 0, 0]\"\n    >\n    </ngx-mat-timepicker>\n    <!-- <div class=\"time-actions\">\n      <button mat-button type=\"button\" color=\"primary\" (click)=\"clear()\">\n        CLEAR\n      </button>\n      <button mat-button type=\"button\" color=\"primary\" (click)=\"apply()\">\n        APPLY\n      </button>\n    </div> -->\n  </div>\n</ng-template>\n"
         }
     ],
     "modules": [
         {
             "name": "AlvysUiComponentsModule",
-            "id": "module-AlvysUiComponentsModule-bedcb0a7a39f1588ca620c6dd7c9eade0b7230d3e47e5e6a7dc8d0ee8d40e3ad73906b59bfc98a347b95cd2766e1e62a736393fe62acfcdd8dedb19078d9bf41",
+            "id": "module-AlvysUiComponentsModule-3bbc36cf67d0180923a7cf610b4c74d0be8a27c4a53b43956e075b094a7e5e42fbff56bc64c057398e4352348c552aa7ed725bfb05fc2a46a68b9b46aeb1bf62",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/alvys-ui-components/src/lib/alvys-ui.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { AngularMaterialModule } from './angular-material.module';\r\nimport {\r\n  ButtonOutlinedComponent,\r\n  ButtonFilledComponent,\r\n  ButtonTextComponent,\r\n  DatePickerComponent,\r\n} from './components';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ButtonOutlinedComponent,\r\n    ButtonFilledComponent,\r\n    ButtonTextComponent,\r\n    DatePickerComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    BrowserAnimationsModule,\r\n    FormsModule,\r\n    ReactiveFormsModule,\r\n    AngularMaterialModule,\r\n  ],\r\n  exports: [\r\n    ButtonOutlinedComponent,\r\n    ButtonFilledComponent,\r\n    ButtonTextComponent,\r\n    DatePickerComponent\r\n  ],\r\n})\r\nexport class AlvysUiComponentsModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { AngularMaterialModule } from './angular-material.module';\r\nimport {\r\n  ButtonOutlinedComponent,\r\n  ButtonFilledComponent,\r\n  ButtonTextComponent,\r\n  DatePickerComponent,\r\n  RangeDatePickerComponent,\r\n  TimePickerComponent,\r\n} from './components';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ButtonOutlinedComponent,\r\n    ButtonFilledComponent,\r\n    ButtonTextComponent,\r\n    DatePickerComponent,\r\n    RangeDatePickerComponent,\r\n    TimePickerComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    BrowserAnimationsModule,\r\n    FormsModule,\r\n    ReactiveFormsModule,\r\n    AngularMaterialModule,\r\n  ],\r\n  exports: [\r\n    ButtonOutlinedComponent,\r\n    ButtonFilledComponent,\r\n    ButtonTextComponent,\r\n    DatePickerComponent,\r\n    RangeDatePickerComponent,\r\n    TimePickerComponent,\r\n  ],\r\n})\r\nexport class AlvysUiComponentsModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -503,6 +975,12 @@
                         },
                         {
                             "name": "DatePickerComponent"
+                        },
+                        {
+                            "name": "RangeDatePickerComponent"
+                        },
+                        {
+                            "name": "TimePickerComponent"
                         }
                     ]
                 },
@@ -528,6 +1006,12 @@
                         },
                         {
                             "name": "DatePickerComponent"
+                        },
+                        {
+                            "name": "RangeDatePickerComponent"
+                        },
+                        {
+                            "name": "TimePickerComponent"
                         }
                     ]
                 },
@@ -543,13 +1027,13 @@
         },
         {
             "name": "AngularMaterialModule",
-            "id": "module-AngularMaterialModule-a60784ec55d712d7f5c27476433d2fe4a4a8f696784874c47989d684719c263066ad92c4279b16ef530f16e58b23d1b4cb71fa5ed12b5ac83997bf40b628d20c",
+            "id": "module-AngularMaterialModule-51592fe98fb3c2236ed890b8e568b9acab01b904ad4ca3eff473681ccfb160bf79b2ea7897314c09819a9fa8123bfa192413dd44fc48548fce8945a0767e9550",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/alvys-ui-components/src/lib/angular-material.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatFormFieldModule } from '@angular/material/form-field';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport { MatDatepickerModule } from '@angular/material/datepicker';\r\nimport {OverlayModule} from '@angular/cdk/overlay';\r\nimport {\r\n  MatMomentDateModule,\r\n  MAT_MOMENT_DATE_ADAPTER_OPTIONS,\r\n  MAT_MOMENT_DATE_FORMATS,\r\n} from '@angular/material-moment-adapter';\r\nimport {\r\n  DateAdapter,\r\n  MatNativeDateModule,\r\n  MatRippleModule,\r\n  MAT_DATE_FORMATS,\r\n  MAT_DATE_LOCALE,\r\n} from '@angular/material/core';\r\nimport {\r\n  MatDialogConfig,\r\n  MatDialogModule,\r\n  MAT_DIALOG_DEFAULT_OPTIONS,\r\n} from '@angular/material/dialog';\r\nimport { CustomDateAdapter } from './custom-providers/custom-material-date-adapter.provider';\r\n\r\nconst materialModules = [\r\n  OverlayModule,\r\n  MatButtonModule,\r\n  MatIconModule,\r\n  MatFormFieldModule,\r\n  MatInputModule,\r\n  MatDatepickerModule,\r\n  MatDialogModule,\r\n  MatMomentDateModule,\r\n  MatRippleModule,\r\n  MatNativeDateModule\r\n  \r\n];\r\n\r\n@NgModule({\r\n  imports: [CommonModule, ...materialModules],\r\n  exports: [...materialModules],\r\n  providers: [\r\n    {\r\n      provide: MAT_DIALOG_DEFAULT_OPTIONS,\r\n      useValue: {\r\n        minWidth: '25vw',\r\n        maxWidth: '65vw',\r\n        hasBackdrop: true,\r\n        disableClose: true,\r\n        closeOnNavigation: true,\r\n      } as MatDialogConfig,\r\n    },\r\n    {\r\n      provide: DateAdapter,\r\n      useClass: CustomDateAdapter,\r\n      deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS],\r\n    },\r\n    { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } },\r\n    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },\r\n  ],\r\n})\r\nexport class AngularMaterialModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatFormFieldModule } from '@angular/material/form-field';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport { MatDatepickerModule } from '@angular/material/datepicker';\r\nimport { OverlayModule } from '@angular/cdk/overlay';\r\nimport { MatSelectModule } from '@angular/material/select';\r\nimport {\r\n  MatMomentDateModule,\r\n  MAT_MOMENT_DATE_ADAPTER_OPTIONS,\r\n  MAT_MOMENT_DATE_FORMATS,\r\n} from '@angular/material-moment-adapter';\r\nimport {\r\n  DateAdapter,\r\n  MatNativeDateModule,\r\n  MatRippleModule,\r\n  MAT_DATE_FORMATS,\r\n  MAT_DATE_LOCALE,\r\n} from '@angular/material/core';\r\nimport {\r\n  MatDialogConfig,\r\n  MatDialogModule,\r\n  MAT_DIALOG_DEFAULT_OPTIONS,\r\n} from '@angular/material/dialog';\r\nimport { CustomDateAdapter } from './custom-providers/custom-material-date-adapter.provider';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { DirectivesModule } from './directives/directives.module';\r\nimport {\r\n  NgxMatDatetimePickerModule,\r\n  NgxMatTimepickerModule,\r\n  NgxMatNativeDateModule,\r\n} from '@angular-material-components/datetime-picker';\r\n\r\nconst materialModules = [\r\n  OverlayModule,\r\n  MatButtonModule,\r\n  MatIconModule,\r\n  MatFormFieldModule,\r\n  MatInputModule,\r\n  MatDatepickerModule,\r\n  MatDialogModule,\r\n  MatMomentDateModule,\r\n  MatRippleModule,\r\n  MatNativeDateModule,\r\n  MatSelectModule,\r\n  DirectivesModule,\r\n  NgxMatDatetimePickerModule,\r\n  NgxMatTimepickerModule,\r\n  NgxMatNativeDateModule,\r\n];\r\n\r\n@NgModule({\r\n  imports: [BrowserModule, CommonModule, ...materialModules],\r\n  exports: [...materialModules],\r\n  providers: [\r\n    {\r\n      provide: MAT_DIALOG_DEFAULT_OPTIONS,\r\n      useValue: {\r\n        minWidth: '25vw',\r\n        maxWidth: '65vw',\r\n        hasBackdrop: true,\r\n        disableClose: true,\r\n        closeOnNavigation: true,\r\n      } as MatDialogConfig,\r\n    },\r\n    {\r\n      provide: DateAdapter,\r\n      useClass: CustomDateAdapter,\r\n      deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS],\r\n    },\r\n    { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } },\r\n    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },\r\n  ],\r\n})\r\nexport class AngularMaterialModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -561,11 +1045,63 @@
                 },
                 {
                     "type": "imports",
+                    "elements": [
+                        {
+                            "name": "DirectivesModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "DirectivesModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "DirectivesModule",
+            "id": "module-DirectivesModule-cde6c9468dc72a86fb8fa5c5340367818b8634a484555300f5ee3ec727daa745f33a1dc7d64ef4a173a157ca40e504483378233ba5d670bf9aee968402279226",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/alvys-ui-components/src/lib/directives/directives.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { ReactiveFormsModule } from '@angular/forms';\r\nimport { FormDatePickerDirective } from './form-date-picker.directive';\r\n\r\n@NgModule({\r\n  declarations: [FormDatePickerDirective],\r\n  imports: [CommonModule, ReactiveFormsModule],\r\n  exports: [FormDatePickerDirective],\r\n  providers: [],\r\n})\r\nexport class DirectivesModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FormDatePickerDirective"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
                     "elements": []
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "FormDatePickerDirective"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -604,7 +1140,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/date-picker.stories.ts",
+                "file": "stories/button-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -614,7 +1150,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-text.stories.ts",
+                "file": "stories/date-picker.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -658,7 +1194,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\r\n  OverlayModule,\r\n  MatButtonModule,\r\n  MatIconModule,\r\n  MatFormFieldModule,\r\n  MatInputModule,\r\n  MatDatepickerModule,\r\n  MatDialogModule,\r\n  MatMomentDateModule,\r\n  MatRippleModule,\r\n  MatNativeDateModule\r\n  \r\n]"
+                "defaultValue": "[\r\n  OverlayModule,\r\n  MatButtonModule,\r\n  MatIconModule,\r\n  MatFormFieldModule,\r\n  MatInputModule,\r\n  MatDatepickerModule,\r\n  MatDialogModule,\r\n  MatMomentDateModule,\r\n  MatRippleModule,\r\n  MatNativeDateModule,\r\n  MatSelectModule,\r\n  DirectivesModule,\r\n  NgxMatDatetimePickerModule,\r\n  NgxMatTimepickerModule,\r\n  NgxMatNativeDateModule,\r\n]"
+            },
+            {
+                "name": "Range",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/time-picker.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Range",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/range-date-picker.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Small",
@@ -714,6 +1270,26 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/button-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonTextComponent>",
+                "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-text [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </alvys-button-text>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/time-picker.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<TimePickerComponent>",
+                "defaultValue": "(args: TimePickerComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/date-picker.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -724,11 +1300,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-text.stories.ts",
+                "file": "stories/range-date-picker.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonTextComponent>",
-                "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-text [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </alvys-button-text>\r\n  `,\r\n})"
+                "type": "Story<RangeDatePickerComponent>",
+                "defaultValue": "(\r\n  args: RangeDatePickerComponent\r\n) => ({\r\n  props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -842,28 +1418,6 @@
                     "defaultValue": "(\r\n  args: ButtonOutlinedComponent\r\n) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-outlined [disabled]=\"disabled\" [size]=\"size\" [color]=\"color\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </alvys-button-outlined>\r\n  `,\r\n})"
                 }
             ],
-            "stories/date-picker.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/date-picker.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/date-picker.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<DatePickerComponent>",
-                    "defaultValue": "(args: DatePickerComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
             "stories/button-text.stories.ts": [
                 {
                     "name": "Default",
@@ -906,6 +1460,28 @@
                     "defaultValue": "(args: ButtonTextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <alvys-button-text [disabled]=\"disabled\" [size]=\"size\" (onClick)=\"onClick($event)\">\r\n    Button\r\n  </alvys-button-text>\r\n  `,\r\n})"
                 }
             ],
+            "stories/date-picker.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/date-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/date-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<DatePickerComponent>",
+                    "defaultValue": "(args: DatePickerComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "projects/alvys-ui-components/src/lib/angular-material.module.ts": [
                 {
                     "name": "materialModules",
@@ -915,7 +1491,51 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\r\n  OverlayModule,\r\n  MatButtonModule,\r\n  MatIconModule,\r\n  MatFormFieldModule,\r\n  MatInputModule,\r\n  MatDatepickerModule,\r\n  MatDialogModule,\r\n  MatMomentDateModule,\r\n  MatRippleModule,\r\n  MatNativeDateModule\r\n  \r\n]"
+                    "defaultValue": "[\r\n  OverlayModule,\r\n  MatButtonModule,\r\n  MatIconModule,\r\n  MatFormFieldModule,\r\n  MatInputModule,\r\n  MatDatepickerModule,\r\n  MatDialogModule,\r\n  MatMomentDateModule,\r\n  MatRippleModule,\r\n  MatNativeDateModule,\r\n  MatSelectModule,\r\n  DirectivesModule,\r\n  NgxMatDatetimePickerModule,\r\n  NgxMatTimepickerModule,\r\n  NgxMatNativeDateModule,\r\n]"
+                }
+            ],
+            "stories/time-picker.stories.ts": [
+                {
+                    "name": "Range",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/time-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/time-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<TimePickerComponent>",
+                    "defaultValue": "(args: TimePickerComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "stories/range-date-picker.stories.ts": [
+                {
+                    "name": "Range",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/range-date-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/range-date-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<RangeDatePickerComponent>",
+                    "defaultValue": "(\r\n  args: RangeDatePickerComponent\r\n) => ({\r\n  props: args,\r\n})"
                 }
             ]
         },
@@ -1002,10 +1622,37 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/alvys-ui-components/src/lib/components/range-date-picker/range-date-picker.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RangeDatePickerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/alvys-ui-components/src/lib/components/time-picker/time-picker.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TimePickerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/alvys-ui-components/src/lib/custom-providers/custom-material-date-adapter.provider.ts",
                 "type": "injectable",
                 "linktype": "injectable",
                 "name": "CustomDateAdapter",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/alvys-ui-components/src/lib/directives/form-date-picker.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "FormDatePickerDirective",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
                 "status": "low"
@@ -1142,6 +1789,46 @@
             },
             {
                 "filePath": "stories/date-picker.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/range-date-picker.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Range",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/range-date-picker.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/time-picker.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Range",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/time-picker.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

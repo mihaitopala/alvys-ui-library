@@ -8,6 +8,7 @@ import {
   ButtonFilledComponent,
   ButtonTextComponent,
   DatePickerComponent,
+  RangeDatePickerComponent,
 } from './components';
 
 @NgModule({
@@ -15,7 +16,8 @@ import {
     ButtonOutlinedComponent,
     ButtonFilledComponent,
     ButtonTextComponent,
-    DatePickerComponent
+    DatePickerComponent,
+    RangeDatePickerComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import {
     ButtonOutlinedComponent,
     ButtonFilledComponent,
     ButtonTextComponent,
-    DatePickerComponent
+    DatePickerComponent,
+    RangeDatePickerComponent,
   ],
 })
 export class AlvysUiComponentsModule {}

@@ -1,0 +1,41 @@
+<mat-form-field appearance="fill">
+  <mat-label>Enter a date range</mat-label>
+  <mat-date-range-input [formGroup]="datePickerForm" [rangePicker]="picker">
+    <input
+      matStartDate
+      formControlName="start"
+      formDatePicker
+      placeholder="Start date"
+    />
+    <input
+      matEndDate
+      formControlName="end"
+      formDatePicker
+      placeholder="End date"
+    />
+  </mat-date-range-input>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker>
+    <mat-date-range-picker-actions>
+      <div class="date-picker-actions">
+        <!-- <button
+            mat-button
+            color="primary"
+            disableRipple="true"
+            (click)="clearFormValue()"
+          >
+            Clear
+          </button> -->
+
+        <!-- <div class="right-section"> -->
+        <button mat-button color="primary" matDateRangePickerCancel>
+          Cancel
+        </button>
+        <button mat-button color="primary" matDateRangePickerApply>
+          Apply
+        </button>
+        <!-- </div> -->
+      </div>
+    </mat-date-range-picker-actions>
+  </mat-date-range-picker>
+</mat-form-field>
