@@ -18,23 +18,22 @@
   <mat-date-range-picker #picker>
     <mat-date-range-picker-actions>
       <div class="date-picker-actions">
-        <!-- <button
-            mat-button
-            color="primary"
-            disableRipple="true"
-            (click)="clearFormValue()"
-          >
-            Clear
-          </button> -->
+        <button
+          mat-button
+          color="primary"
+          (click)="clearFormValue()"
+        >
+          Clear
+        </button>
 
-        <!-- <div class="right-section"> -->
-        <button mat-button color="primary" matDateRangePickerCancel>
-          Cancel
-        </button>
-        <button mat-button color="primary" matDateRangePickerApply>
-          Apply
-        </button>
-        <!-- </div> -->
+        <div class="right-section">
+          <button mat-button color="primary" matDateRangePickerCancel>
+            Cancel
+          </button>
+          <button mat-button color="primary" matDateRangePickerApply>
+            Apply
+          </button>
+        </div>
       </div>
     </mat-date-range-picker-actions>
   </mat-date-range-picker>

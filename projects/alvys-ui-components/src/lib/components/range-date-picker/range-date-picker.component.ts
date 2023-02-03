@@ -9,10 +9,8 @@ import { MatDateRangePicker } from '@angular/material/datepicker';
 })
 export class RangeDatePickerComponent {
   @ViewChild('picker')
-  public datePicker!: MatDateRangePicker<{
-    start: Date | null;
-    end: Date | null;
-  }>;
+  public datePicker!: MatDateRangePicker<void>;
+
   @Output()
   clearValue? = new EventEmitter<Event>();
 
@@ -39,6 +37,8 @@ export class RangeDatePickerComponent {
 
   clearFormValue(): void {
     this.datePickerForm.reset();
+    this.datePicker.close();
+
     this.clearValue?.emit();
   }
 }
