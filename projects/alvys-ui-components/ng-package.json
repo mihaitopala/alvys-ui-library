@@ -10,6 +10,8 @@
   "assets": [
     "./styles/global.scss",
     "./styles/buttons.scss",
+    "./styles/material-colors.scss",
+    "./styles/date-picker.scss",
     "./styles/custom-theme.scss"
   ],
   "deleteDestPath": false

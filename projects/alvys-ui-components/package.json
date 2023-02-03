@@ -1,6 +1,6 @@
 {
   "name": "alvys-ui-components",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "keywords": ["alvys", "components"],
   "exports": {
     "./styles/index.scss": {
